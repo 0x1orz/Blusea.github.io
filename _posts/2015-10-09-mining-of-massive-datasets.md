@@ -3,7 +3,7 @@ layout: post
 title: "笔记：Mining of Massive Datasets"
 description: ""
 category: tech
-tags: []
+tags: ["Data Mining"]
 modify: 2016-05-22 13:49:26
 ---
 
