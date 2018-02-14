@@ -1,0 +1,6 @@
+# skills section data
+
+label: Ability
+id : cs
+aspects: Research,Programming,Writting,Readding,Algorithms,MathathicsModleing
+percentage: 100, 80, 70, 70, 85, 75

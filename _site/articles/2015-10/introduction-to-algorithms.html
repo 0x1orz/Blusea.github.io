@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Introduction to Algorithms, Third EditionBy Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford SteinTable of ContentsI Foundations1 The Ro...">
+  <meta name="keywords" content="Programming, Bio, and DS">
+  <meta name="author" content="笔记：Introduction to Algorithms, Third Edition | 楚园">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="笔记：Introduction to Algorithms, Third Edition | 楚园">
+  <meta name="twitter:description" content="Introduction to Algorithms, Third EditionBy Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford SteinTable of ContentsI Foundations1 The Ro...">
+  <meta name="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="http://localhost:4000">
+  <meta property="og:title" content="笔记：Introduction to Algorithms, Third Edition | 楚园">
+  <meta property="og:description" content="Introduction to Algorithms, Third EditionBy Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford SteinTable of ContentsI Foundations1 The Ro...">
+  <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
+  <title>笔记：Introduction to Algorithms, Third Edition | 楚园</title>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2015-10/introduction-to-algorithms">
+  <link rel="alternate" type="application/rss+xml" title="楚园" href="http://localhost:4000 /feed.xml " />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">吴楚</a>
+  <span class="author_job">DS</span>
+  <span class="author_bio mbm">Bio-DS SZ.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+          
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+            
+      <li class="nav-item">
+        <a href="http://localhost:4000/resume/">Resume</a>
+        
+          <span>/</span>
+        
+      </li>
+        
+      <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+        
+      </li>
+       
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('iwuchu@126.com', 'Hello from website');</script>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    <li><a href="http://github.com/Blusea" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="笔记：Introduction to Algorithms, Third Edition">笔记：Introduction to Algorithms, Third Edition</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        27 OCT 2015
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    1 min read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p><a href="https://mitpress.mit.edu/books/introduction-algorithms">Introduction to Algorithms, Third Edition</a>
+By Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein</p>
+
+<h3 id="table-of-contents">Table of Contents</h3>
+
+<h4 id="i-foundations">I Foundations</h4>
+
+<h5 id="1-the-role-of-algorithms-in-computing-5">1 The Role of Algorithms in Computing 5</h5>
+
+<h5 id="2-getting-started-16">2 Getting Started 16</h5>
+
+<h5 id="3-growth-of-functions-43">3 Growth of Functions 43</h5>
+
+<h5 id="4-divide-and-conquer-65">4 Divide-and-Conquer 65</h5>
+
+<h5 id="5-probabilistic-analysis-and-randomized-algorithms-114">5 Probabilistic Analysis and Randomized Algorithms 114</h5>
+
+<h4 id="ii-sorting-and-order-statistics">II Sorting and Order Statistics</h4>
+
+<h5 id="6-heapsort-151">6 Heapsort 151</h5>
+
+<h5 id="7-quicksort-170">7 Quicksort 170</h5>
+
+<h5 id="8-sorting-in-linear-time-191">8 Sorting in Linear Time 191</h5>
+
+<h5 id="9-medians-and-order-statistics-213">9 Medians and Order Statistics 213</h5>
+
+<h4 id="iii-data-structures">III Data Structures</h4>
+
+<h5 id="10-elementary-data-structures-232">10 Elementary Data Structures 232</h5>
+
+<h5 id="11-hash-tables-253">11 Hash Tables 253</h5>
+
+<h5 id="12-binary-search-trees-286">12 Binary Search Trees 286</h5>
+
+<h5 id="13-red-black-trees-308">13 Red-Black Trees 308</h5>
+
+<h5 id="14-augmenting-data-structures-339">14 Augmenting Data Structures 339</h5>
+
+<h4 id="iv-advanced-design-and-analysis-techniques">IV Advanced Design and Analysis Techniques</h4>
+
+<h5 id="15-dynamic-programming-359"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/15_Dynamic_Programming/note.ipynb">15 Dynamic Programming 359</a></h5>
+
+<h5 id="16-greedy-algorithms-414"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/16_Greedy_Algorithms/note.ipynb">16 Greedy Algorithms 414</a></h5>
+
+<h5 id="17-amortized-analysis-451"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/17_Amortized_Analysis/note.ipynb">17 Amortized Analysis 451</a></h5>
+
+<h4 id="v-advanced-data-structures">V Advanced Data Structures</h4>
+
+<h5 id="18-b-trees-484"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/18_B_Trees/note.ipynb">18 B-Trees 484</a></h5>
+
+<h5 id="19-fibonacci-heaps-505"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/19_Fibonacci_Heap/note.ipynb">19 Fibonacci Heaps 505</a></h5>
+
+<h5 id="20-van-emde-boas-trees-531"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/20_van_Emde_Boas_Trees/note.ipynb">20 van Emde Boas Trees 531</a></h5>
+
+<h5 id="21-data-structures-for-disjoint-sets-561"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/21_Data_Structures_for_Disjoint_Sets/note.ipynb">21 Data Structures for Disjoint Sets 561</a></h5>
+
+<h4 id="vi-graph-algorithms">VI Graph Algorithms</h4>
+
+<h5 id="22-elementary-graph-algorithms-589"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/22_Elementary_Graph_Algorithms/note.ipynb">22 Elementary Graph Algorithms 589</a></h5>
+
+<h5 id="23-minimum-spanning-trees-624"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/23_Minimum_Spanning_Trees/note.ipynb">23 Minimum Spanning Trees 624</a></h5>
+
+<h5 id="24-single-source-shortest-paths-643"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/24_Single-Source_Shortest_Paths/note.ipynb">24 Single-Source Shortest Paths 643</a></h5>
+
+<h5 id="25-all-pairs-shortest-paths-684"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/25_All-Pairs_Shortest_Paths/note.ipynb">25 All-Pairs Shortest Paths 684</a></h5>
+
+<h5 id="26-maximum-flow-708"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/26_Maximum_Flow/note.ipynb">26 Maximum Flow 708</a></h5>
+
+<h4 id="vii-selected-topics">VII Selected Topics</h4>
+
+<h5 id="27-multithreaded-algorithms">27 Multithreaded Algorithms</h5>
+
+<h5 id="28-matrix-operations-813">28 Matrix Operations 813</h5>
+
+<h5 id="29-linear-programming-843">29 Linear Programming 843</h5>
+
+<h5 id="30-polynomials-and-the-fft-898">30 Polynomials and the FFT 898</h5>
+
+<h5 id="31-number-theoretic-algorithms-926">31 Number-Theoretic Algorithms 926</h5>
+
+<h5 id="32-string-matching-985">32 String Matching 985</h5>
+
+<h5 id="33-computational-geometry-1014">33 Computational Geometry 1014</h5>
+
+<h5 id="34-np-completeness-1048">34 NP-Completeness 1048</h5>
+
+<h5 id="35-approximation-algorithms-1106">35 Approximation Algorithms 1106</h5>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2015-10/introduction-to-algorithms" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2015-10/introduction-to-algorithms" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2015-10/introduction-to-algorithms" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2015-10/introduction-to-algorithms" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2015-10/introduction-to-algorithms" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2018 吴楚. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>

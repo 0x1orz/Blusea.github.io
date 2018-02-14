@@ -1,1 +1,67 @@
-theme: jekyll-theme-cayman
+#
+###################################
+# Site wide configuration
+####################################
+#
+title: 楚园
+email: iwuchu@126.com
+description: A simple and awesome blog theme powered by jekyll.
+url: https://Blusea.github.io # the base hostname & protocol for your site
+keywords: ["Programming", "Bio", "DS"]
+
+#
+###################################
+# Jekyll configuration
+####################################
+#
+timezone:          China/Beijing
+markdown:          kramdown
+highlighter:       rouge
+excerpt_separator: <!--more-->
+permalink:         /articles/:year-:month/:title
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+#
+###################################
+# Site Owner configuration
+####################################
+#
+owner:
+  name: 吴楚
+  avatar: avatar.jpg
+  job: "DS"
+  bio: "Bio-DS SZ."
+  email: iwuchu@126.com
+#  disqus-shortname: renyuanzblog
+#  twitter: renyuan814 #username
+#  facebook: #username
+#  google:
+#    plus: #username
+#    analytics: UA-62251910-2
+#    verify:
+#    ad-client:
+#    ad-slot:
+  bing-verify:
+  github: Blusea #username
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+#  linkedin: renyuan-zou-69b7038a #username
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  codepen: #username
+  telegram: #username

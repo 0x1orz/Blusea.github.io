@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="朋友推荐，于是最近在看 Mining of Massive Datasets - Jure Leskovec, Anand Rajaraman, Jeff Ullman，此书资源在官网可自由获取。第一次尝试将笔记整理成 iPython notebook 形式，效果很棒！开始打算是将练习题尽量全做完的，但发现挺费时...">
+  <meta name="keywords" content="Programming, Bio, and DS">
+  <meta name="author" content="笔记：Mining of Massive Datasets | 楚园">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="笔记：Mining of Massive Datasets | 楚园">
+  <meta name="twitter:description" content="朋友推荐，于是最近在看 Mining of Massive Datasets - Jure Leskovec, Anand Rajaraman, Jeff Ullman，此书资源在官网可自由获取。第一次尝试将笔记整理成 iPython notebook 形式，效果很棒！开始打算是将练习题尽量全做完的，但发现挺费时...">
+  <meta name="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="http://localhost:4000">
+  <meta property="og:title" content="笔记：Mining of Massive Datasets | 楚园">
+  <meta property="og:description" content="朋友推荐，于是最近在看 Mining of Massive Datasets - Jure Leskovec, Anand Rajaraman, Jeff Ullman，此书资源在官网可自由获取。第一次尝试将笔记整理成 iPython notebook 形式，效果很棒！开始打算是将练习题尽量全做完的，但发现挺费时...">
+  <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
+  <title>笔记：Mining of Massive Datasets | 楚园</title>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2015-10/mining-of-massive-datasets">
+  <link rel="alternate" type="application/rss+xml" title="楚园" href="http://localhost:4000 /feed.xml " />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">吴楚</a>
+  <span class="author_job">DS</span>
+  <span class="author_bio mbm">Bio-DS SZ.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+          
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+            
+      <li class="nav-item">
+        <a href="http://localhost:4000/resume/">Resume</a>
+        
+          <span>/</span>
+        
+      </li>
+        
+      <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+        
+      </li>
+       
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('iwuchu@126.com', 'Hello from website');</script>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    <li><a href="http://github.com/Blusea" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="笔记：Mining of Massive Datasets">笔记：Mining of Massive Datasets</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        9 OCT 2015
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    1 min read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>朋友推荐，于是最近在看 <a href="http://www.mmds.org/">Mining of Massive Datasets - Jure Leskovec, Anand Rajaraman, Jeff Ullman</a>，此书资源在官网可自由获取。</p>
+
+<p>第一次尝试将笔记整理成 iPython notebook 形式，效果很棒！开始打算是将练习题尽量全做完的，但发现挺费时，后面主要是笔记整理为主，感兴趣的习题会尝试去解。</p>
+
+<h3 id="目录"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/tree/master/Mining_of_Massive_Datasets/">目录</a></h3>
+
+<h4 id="1-data-mining">1 Data Mining</h4>
+
+<h4 id="2-map-reduce-and-the-new-software-stack"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/MapReduce_and_the_New_Software_Stack/note.ipynb">2 Map-Reduce and the New Software Stack</a></h4>
+
+<h4 id="3-finding-similar-items"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Finding_Similar_Items/note.ipynb">3 Finding Similar Items</a></h4>
+
+<h4 id="4-mining-data-streams"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Mining_Data_Streams/note.ipynb">4 Mining Data Streams</a></h4>
+
+<h4 id="5-link-analysis"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Link_Analysis/note.ipynb">5 Link Analysis</a></h4>
+
+<h4 id="6-frequent-itemsets"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Frequent_Itemsets/note.ipynb">6 Frequent Itemsets</a></h4>
+
+<h4 id="7-clustering"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Clustering/note.ipynb">7 Clustering</a></h4>
+
+<h4 id="8-advertising-on-the-web"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Advertising_on_the_Web/note.ipynb">8 Advertising on the Web</a></h4>
+
+<h4 id="9-recommendation-systems"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Recommendation_Systems/note.ipynb">9 Recommendation Systems</a></h4>
+
+<h4 id="10--mining-social-network-graphs"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Mining_Social_Network_Graphs/note.ipynb">10  Mining Social-Network Graphs</a></h4>
+
+<h4 id="11--dimensionality-reduction"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Dimensionality_Reduction/note.ipynb">11  Dimensionality Reduction</a></h4>
+
+<h4 id="12--large-scale-machine-learning"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Large-Scale_Machine_Learning/note.ipynb">12  Large-Scale Machine Learning</a></h4>
+
+<p>后记:  <br />
+花费6个月时间，断断续续看完，哈希和近似的想法真是开阔了眼界。第一回看比较急促，此书值得反复看，多实践。</p>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2015-10/mining-of-massive-datasets" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2015-10/mining-of-massive-datasets" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2015-10/mining-of-massive-datasets" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2015-10/mining-of-massive-datasets" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2015-10/mining-of-massive-datasets" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2018 吴楚. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>

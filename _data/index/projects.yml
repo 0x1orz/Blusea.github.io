@@ -1,0 +1,4 @@
+- name: CIB
+  descr: "Bio"
+  image: pong.png
+  github: https://github.com/blusea

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="update: 2017-06-08最近IntelliJ升级到2017后，scala文件的行尾空格，不再自动消除，真是逼死洁癖程序员。开始我的解决方案是在git提交时做防御，如下：git commit -a -m "xxx"git rebase --whitespace=fix HEAD~1但每回都得敲俩命令，真...">
+  <meta name="keywords" content="Programming, Bio, and DS">
+  <meta name="author" content="How to remove trailing spaces(行尾空格) for Scala in IntelliJ IDEA 2017 | 楚园">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to remove trailing spaces(行尾空格) for Scala in IntelliJ IDEA 2017 | 楚园">
+  <meta name="twitter:description" content="update: 2017-06-08最近IntelliJ升级到2017后，scala文件的行尾空格，不再自动消除，真是逼死洁癖程序员。开始我的解决方案是在git提交时做防御，如下：git commit -a -m "xxx"git rebase --whitespace=fix HEAD~1但每回都得敲俩命令，真...">
+  <meta name="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="http://localhost:4000">
+  <meta property="og:title" content="How to remove trailing spaces(行尾空格) for Scala in IntelliJ IDEA 2017 | 楚园">
+  <meta property="og:description" content="update: 2017-06-08最近IntelliJ升级到2017后，scala文件的行尾空格，不再自动消除，真是逼死洁癖程序员。开始我的解决方案是在git提交时做防御，如下：git commit -a -m "xxx"git rebase --whitespace=fix HEAD~1但每回都得敲俩命令，真...">
+  <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
+  <title>How to remove trailing spaces(行尾空格) for Scala in IntelliJ IDEA 2017 | 楚园</title>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2017-06/intellij-scala-trim-trailing-space">
+  <link rel="alternate" type="application/rss+xml" title="楚园" href="http://localhost:4000 /feed.xml " />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">吴楚</a>
+  <span class="author_job">DS</span>
+  <span class="author_bio mbm">Bio-DS SZ.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+          
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+            
+      <li class="nav-item">
+        <a href="http://localhost:4000/resume/">Resume</a>
+        
+          <span>/</span>
+        
+      </li>
+        
+      <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+        
+      </li>
+       
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('iwuchu@126.com', 'Hello from website');</script>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    <li><a href="http://github.com/Blusea" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="How to remove trailing spaces(行尾空格) for Scala in IntelliJ IDEA 2017">How to remove trailing spaces(行尾空格) for Scala in IntelliJ IDEA 2017</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        7 JUN 2017
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    1 min read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>update: 2017-06-08</p>
+
+<p>最近IntelliJ升级到2017后，scala文件的行尾空格，不再自动消除，真是逼死洁癖程序员。</p>
+
+<p>开始我的解决方案是在git提交时做防御，如下：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">-a</span> <span class="nt">-m</span> <span class="s2">"xxx"</span>
+git rebase <span class="nt">--whitespace</span><span class="o">=</span>fix HEAD~1
+</code></pre></div></div>
+
+<p>但每回都得敲俩命令，真是不胜其烦。</p>
+
+<p>已经打算弄个bash化名前，幸好我查了下IntelliJ配置，结果找到了做怪的选项。
+解决方案如下：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+ Preferences
+  - Editor
+    - General
+      - Other
+        Strip trailing spaces on Save: [Modified Lines]
+        [ ] Always keep trailing spaces on caret line
+
++ Preferences
+  - Editor
+    - Code Style
+      - Scala
+        - Tabs and Indents:
+          [ ] Keep indents on empty lines
+</code></pre></div></div>
+
+<p>注意，此功能只会在保存文件时触发。</p>
+
+<p>所以，每次提交前，保存全部文件（Save All: Command key + S），即会自动清除。</p>
+
+<p>总之，又可以愉快地搬砖了，以上。</p>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2017-06/intellij-scala-trim-trailing-space" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2017-06/intellij-scala-trim-trailing-space" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2017-06/intellij-scala-trim-trailing-space" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2017-06/intellij-scala-trim-trailing-space" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2017-06/intellij-scala-trim-trailing-space" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2018 吴楚. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>

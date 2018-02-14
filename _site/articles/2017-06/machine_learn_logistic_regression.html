@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="update: 2017-07-11逻辑回归在点击率推荐中仍占有半壁江山，于是打算细致做下梳理，包括常见理论变形和工业成熟实现。预计耗时一个月。0. 理论0.1 原理  逻辑回归算法简介和Python实现0.2 寻优算法常规的机器学习算法，通常有两个过程：一是构建模型，并给出损失函数；二是用数值寻优根据损失函数找...">
+  <meta name="keywords" content="Programming, Bio, and DS">
+  <meta name="author" content="机器学习：逻辑回归 | 楚园">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="机器学习：逻辑回归 | 楚园">
+  <meta name="twitter:description" content="update: 2017-07-11逻辑回归在点击率推荐中仍占有半壁江山，于是打算细致做下梳理，包括常见理论变形和工业成熟实现。预计耗时一个月。0. 理论0.1 原理  逻辑回归算法简介和Python实现0.2 寻优算法常规的机器学习算法，通常有两个过程：一是构建模型，并给出损失函数；二是用数值寻优根据损失函数找...">
+  <meta name="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="http://localhost:4000">
+  <meta property="og:title" content="机器学习：逻辑回归 | 楚园">
+  <meta property="og:description" content="update: 2017-07-11逻辑回归在点击率推荐中仍占有半壁江山，于是打算细致做下梳理，包括常见理论变形和工业成熟实现。预计耗时一个月。0. 理论0.1 原理  逻辑回归算法简介和Python实现0.2 寻优算法常规的机器学习算法，通常有两个过程：一是构建模型，并给出损失函数；二是用数值寻优根据损失函数找...">
+  <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
+  <title>机器学习：逻辑回归 | 楚园</title>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2017-06/machine_learn_logistic_regression">
+  <link rel="alternate" type="application/rss+xml" title="楚园" href="http://localhost:4000 /feed.xml " />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">吴楚</a>
+  <span class="author_job">DS</span>
+  <span class="author_bio mbm">Bio-DS SZ.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+          
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+            
+      <li class="nav-item">
+        <a href="http://localhost:4000/resume/">Resume</a>
+        
+          <span>/</span>
+        
+      </li>
+        
+      <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+        
+      </li>
+       
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('iwuchu@126.com', 'Hello from website');</script>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    <li><a href="http://github.com/Blusea" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="机器学习：逻辑回归">机器学习：逻辑回归</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        26 JUN 2017
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    1 min read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>update: 2017-07-11</p>
+
+<p>逻辑回归在点击率推荐中仍占有半壁江山，于是打算细致做下梳理，包括常见理论变形和工业成熟实现。预计耗时一个月。</p>
+
+<h3 id="0-理论">0. 理论</h3>
+
+<h4 id="01-原理">0.1 原理</h4>
+
+<ul>
+  <li><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/machine_learning/logistic_regression/demo.ipynb">逻辑回归算法简介和Python实现</a></li>
+</ul>
+
+<h4 id="02-寻优算法">0.2 寻优算法</h4>
+
+<p>常规的机器学习算法，通常有两个过程：一是构建模型，并给出损失函数；二是用数值寻优根据损失函数找到合适参数。</p>
+
+<p>数值寻优本身门类很多，如下面博文所述：</p>
+
+<ul>
+  <li><a href="http://www.cnblogs.com/maybe2030/p/4751804.html">常见的几种最优化方法</a></li>
+  <li><a href="http://blog.sciencenet.cn/blog-628137-497041.html">学习总结：局部搜索</a></li>
+  <li><a href="http://blog.csdn.net/fangqingan_java/article/details/48951191">数值优化（Numerical Optimization）学习系列-目录</a></li>
+</ul>
+
+<p>这个领域数理要求很高。不过我个人认为，把它们作为工具看待，了解其特性和区别即可。于是，简要梳理下常见的寻优算子：</p>
+
+<ul>
+  <li>最速下降法：用一阶导数做步长搜索。简单，支持导步，但收敛较慢，震荡。
+    <ul>
+      <li>批量梯度下降法(Batch Gradient Descent, BSD)：全量数据更新。</li>
+      <li>随机梯度下降法(Stochastic Gradient Descent, SGD)：数据随机割成多份，逐份更新。</li>
+    </ul>
+  </li>
+  <li>
+    <p>牛顿法(Newton-Raphson method)：<a href="http://blog.csdn.net/luoleicn/article/details/6527049">简单介绍</a>，其实质是用二维曲面拟合坐标点，再用曲面的切线进行搜索。优点是利用二阶导信息，收敛更快，缺点需借助Hessian矩阵$O(n^2)$，无法处理大量数据。</p>
+  </li>
+  <li>拟牛顿法(Quasi-Newton Methods)：用一阶导信息来近似构造Hessian矩阵，简化运算复杂度。
+    <ul>
+      <li>DFP</li>
+      <li>BFGS:
+        <ul>
+          <li>LBFGS：内存更省。
+            <ul>
+              <li>WQL-QN: 支持L1正则。</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>共轭梯度法(Conjugate gradient method)：搜索方向由当前梯度和以前搜索方向合成，介于最速下降法与牛顿法之间的一个方法。</li>
+</ul>
+
+<p>未来有时间，打算读下经典教材，都是厚部头：</p>
+
+<ul>
+  <li>Convex Optimization, Stephen Boyd, Lieven Vandenberghe.</li>
+  <li>Numerical Optimization, Jorge Nocedal, Stephen J. Wright.</li>
+</ul>
+
+<h3 id="1-工程实现">1. 工程实现</h3>
+
+<ul>
+  <li><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/machine_learning/logistic_regression/spark_ml_lr.ipynb">逻辑回归在spark中的实现简介</a></li>
+  <li><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/tree/master/machine_learning/logistic_regression/sklearn_lr.ipynb">逻辑回归在scikit-learn中的实现简介</a></li>
+  <li><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/machine_learning/logistic_regression/tensorflow_lr.ipynb">逻辑回归在TensorFlow contrib.learn中的实现简介</a></li>
+  <li>Angel</li>
+  <li>R pacakge: glm / glmet</li>
+  <li>Liblinear</li>
+</ul>
+
+<h3 id="2-结语">2. 结语</h3>
+
+<p>逻辑回归的理论既简单又复杂，简单是说二分类的代数式很容易入门看懂，复杂是说对它的拓展可以很深入，如用矩阵式来求解、多分类、复杂的数值优化方法等等。易于入门，难于精通。</p>
+
+<p>虽然线性分类器后面的数理知识坚实又深奥，然而工程实现相对简单，主要是损失函数和导数、及寻优算子二部份。大多数工程实现都大同小异，如sklearn是标签-1/+1的推导，spark在最后代数变换，将0/1标签转成-1/+1，tensorflow是标签0/1的推导。总体而言，代码并不太复杂。</p>
+
+<p>花费了两周时间来梳理基础知识，以后有时间再深入。</p>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2017-06/machine_learn_logistic_regression" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2017-06/machine_learn_logistic_regression" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2017-06/machine_learn_logistic_regression" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2017-06/machine_learn_logistic_regression" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2017-06/machine_learn_logistic_regression" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2018 吴楚. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>

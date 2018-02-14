@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="update: 2017-01-21根据官方调优指南spark - Data Serialization所言，Kyro通常比原生的Java默认实现快10倍，所以建议使用Kyro来加速。0. 开启Kyro开启的方法很简单，就是设参数spark.serializer。有三种方式指定：      程序内：    val...">
+  <meta name="keywords" content="Programming, Bio, and DS">
+  <meta name="author" content="Spark 2.0.2, double[], 使用Kyro序列化加速，和手动注册类名 | 楚园">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Spark 2.0.2, double[], 使用Kyro序列化加速，和手动注册类名 | 楚园">
+  <meta name="twitter:description" content="update: 2017-01-21根据官方调优指南spark - Data Serialization所言，Kyro通常比原生的Java默认实现快10倍，所以建议使用Kyro来加速。0. 开启Kyro开启的方法很简单，就是设参数spark.serializer。有三种方式指定：      程序内：    val...">
+  <meta name="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="http://localhost:4000">
+  <meta property="og:title" content="Spark 2.0.2, double[], 使用Kyro序列化加速，和手动注册类名 | 楚园">
+  <meta property="og:description" content="update: 2017-01-21根据官方调优指南spark - Data Serialization所言，Kyro通常比原生的Java默认实现快10倍，所以建议使用Kyro来加速。0. 开启Kyro开启的方法很简单，就是设参数spark.serializer。有三种方式指定：      程序内：    val...">
+  <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
+  <title>Spark 2.0.2, double[], 使用Kyro序列化加速，和手动注册类名 | 楚园</title>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2017-01/spark-kyro">
+  <link rel="alternate" type="application/rss+xml" title="楚园" href="http://localhost:4000 /feed.xml " />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">吴楚</a>
+  <span class="author_job">DS</span>
+  <span class="author_bio mbm">Bio-DS SZ.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+          
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+            
+      <li class="nav-item">
+        <a href="http://localhost:4000/resume/">Resume</a>
+        
+          <span>/</span>
+        
+      </li>
+        
+      <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+        
+      </li>
+       
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('iwuchu@126.com', 'Hello from website');</script>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    <li><a href="http://github.com/Blusea" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Spark 2.0.2, double[], 使用Kyro序列化加速，和手动注册类名">Spark 2.0.2, double[], 使用Kyro序列化加速，和手动注册类名</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        21 JAN 2017
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    1 min read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>update: 2017-01-21</p>
+
+<p>根据官方调优指南<a href="http://spark.apache.org/docs/latest/tuning.html#data-serialization">spark - Data Serialization</a>所言，Kyro通常比原生的Java默认实现快10倍，所以建议使用Kyro来加速。</p>
+
+<h3 id="0-开启kyro">0. 开启Kyro</h3>
+
+<p>开启的方法很简单，就是设参数<code class="highlighter-rouge">spark.serializer</code>。有三种方式指定：</p>
+
+<ul>
+  <li>
+    <p>程序内：</p>
+
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">conf</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">SparkConf</span><span class="o">()</span>
+<span class="n">conf</span><span class="o">.</span><span class="n">set</span><span class="o">(</span><span class="s">"spark.serializer"</span><span class="o">,</span> <span class="s">"org.apache.spark.serializer.KryoSerializer"</span><span class="o">)</span>
+
+<span class="k">val</span> <span class="n">spark</span> <span class="k">=</span> <span class="nc">SparkSession</span>
+  <span class="o">.</span><span class="n">builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="n">config</span><span class="o">(</span><span class="n">conf</span><span class="o">)</span>
+  <span class="o">.</span><span class="n">getOrCreate</span><span class="o">()</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>spark-submit参数：</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spark-submit <span class="nt">--conf</span> spark.serializer<span class="o">=</span>org.apache.spark.serializer.KryoSerializer
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>全局默认配置：conf/spark-defaults.conf:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spark.serializer   org.apache.spark.serializer.KryoSerializer
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="1-注册类名">1. 注册类名</h3>
+
+<h4 id="10-为什么要注册类名">1.0 为什么要注册类名？</h4>
+
+<p>Kyro默认序列化实例时在前面会写上类名，比如<code class="highlighter-rouge">java.lang.Double</code>，类名越长，额外的存储开销越大。为了解决这个问题，Kyro允许将类名注册进映射表里，通过分配数字ID来替换冗长的类名，比如<code class="highlighter-rouge">java.lang.Double</code>使用数字0来代替。这种方式节省了储存空间，但代价是我们必须手动将所有性能相关的类名注册。</p>
+
+<p>spark使用<a href="https://github.com/twitter/chill">Twitter chill</a>注册了常用的Scala类，也对自己的常用类都进行了注册，具体见<a href="https://github.com/apache/spark/blob/v1.4.0/core/src/main/scala/org/apache/spark/serializer/KryoSerializer.scala">KryoSerializer.scala</a>。但很遗憾，在实际使用中，仍然有大量的类名未包含其中，必须手动注册。</p>
+
+<h4 id="11-怎么查找到没有注册的类名">1.1 怎么查找到没有注册的类名？</h4>
+
+<p>最靠谱的办法是开启<code class="highlighter-rouge">spark.kryo.registrationRequired=true</code>，于是Kyro遇到没有注册的类名时就会抛异常告警。于是，一遍遍反复排查直到完全跑通，纯体力活。</p>
+
+<h4 id="12-如何注册私有类">1.2 如何注册私有类？</h4>
+
+<ul>
+  <li>
+    <p>程序内部时，spark指南中使用<code class="highlighter-rouge">classOf</code>方法来找类名，</p>
+
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">conf</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">SparkConf</span><span class="o">().</span><span class="n">setMaster</span><span class="o">(...).</span><span class="n">setAppName</span><span class="o">(...)</span>
+<span class="n">conf</span><span class="o">.</span><span class="n">registerKryoClasses</span><span class="o">(</span><span class="nc">Array</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">MyClass1</span><span class="o">],</span> <span class="n">classOf</span><span class="o">[</span><span class="kt">MyClass2</span><span class="o">]))</span>
+</code></pre></div>    </div>
+
+    <p>它的问题是，你没法导入其他包的私有类。解决方法是使用<code class="highlighter-rouge">Class.forName</code>，如:</p>
+
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">conf</span><span class="o">.</span><span class="n">registerKryoClasses</span><span class="o">(</span><span class="nc">Array</span><span class="o">(</span><span class="nc">Class</span><span class="o">.</span><span class="n">forName</span><span class="o">(</span><span class="s">"org.apache.spark.SomePrivateClass"</span><span class="o">)))</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>spark-submit / spark-defaults.conf</p>
+
+    <p>因为<a href="https://github.com/apache/spark/blob/v1.4.0/core/src/main/scala/org/apache/spark/serializer/KryoSerializer.scala#L107">KyroSerializer</a>也是使用<code class="highlighter-rouge">Class.forName</code>来解析<code class="highlighter-rouge">spark.kryo.classesToRegister</code>字段，所以直接指定类名即可。</p>
+  </li>
+</ul>
+
+<h4 id="13-如何注册java原生类型和数组">1.3 如何注册Java原生类型和数组？</h4>
+
+<p>理论上，Kyro已经对原生类型进行了注册，见<a href="https://github.com/puniverse/quasar/blob/master/quasar-core/src/main/java/co/paralleluniverse/io/serialization/kryo/KryoUtil.java#L42">KyroUtil</a>。但奇怪的是，spark仍然会要求手动注册。</p>
+
+<p>同样的解决方法，使用<code class="highlighter-rouge">Class.forName</code>来获取，具体的书写规则见<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#getName--">Class.getName()</a>。</p>
+
+<p>举点例子：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Element Type</th>
+      <th>Encoding</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">double[]</code></td>
+      <td><code class="highlighter-rouge">"[B"</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">double[][]</code></td>
+      <td><code class="highlighter-rouge">"[[B"</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">Object()</code></td>
+      <td><code class="highlighter-rouge">"java.lang.Object"</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">new Object[3]</code></td>
+      <td><code class="highlighter-rouge">"[Ljava.lang.Object;"</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="2-范例">2. 范例</h3>
+
+<p>最后，贴份对spark-ml中逻辑回归和XGBoost的手动注册类名，己经囊括了所有用法，</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">## serial</span>
+<span class="c">#spark.serializer                 org.apache.spark.serializer.KryoSerializer</span>
+<span class="c">#spark.kryo.registrationRequired  true</span>
+spark.kryo.classesToRegister      org.apache.spark.mllib.stat.MultivariateOnlineSummarizer,[D,[I,[F,org.apache.spark.ml.classification.MultiClassSummarizer,org.apache.spark.ml.classification.LogisticAggregator,ml.dmlc.xgboost4j.scala.Booster,ml.dmlc.xgboost4j.java.Booster,[Lml.dmlc.xgboost4j.scala.Booster<span class="p">;</span>,org.apache.spark.ml.feature.LabeledPoint,org.apache.spark.ml.linalg.SparseVector,org.apache.spark.mllib.evaluation.binary.BinaryLabelCounter,scala.reflect.ClassTag<span class="nv">$$</span>anon<span class="nv">$1</span>,java.lang.Class,[Lorg.apache.spark.mllib.evaluation.binary.BinaryLabelCounter<span class="p">;</span>,scala.collection.mutable.WrappedArray<span class="nv">$ofRef</span>,[Ljava.lang.String<span class="p">;</span>,[Lorg.apache.spark.sql.execution.datasources.HadoopFsRelation<span class="nv">$FakeFileStatus</span><span class="p">;</span>,org.apache.spark.sql.execution.datasources.HadoopFsRelation<span class="nv">$FakeFileStatus</span>,[Lorg.apache.spark.sql.execution.datasources.HadoopFsRelation<span class="nv">$FakeBlockLocation</span><span class="p">;</span>,org.apache.spark.sql.execution.datasources.HadoopFsRelation<span class="nv">$FakeBlockLocation</span>,org.apache.spark.sql.execution.columnar.CachedBatch,org.apache.spark.ml.feature.Instance,[[B,org.apache.spark.sql.catalyst.expressions.GenericInternalRow,[Ljava.lang.Object<span class="p">;</span>
+</code></pre></div></div>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2017-01/spark-kyro" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2017-01/spark-kyro" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2017-01/spark-kyro" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2017-01/spark-kyro" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2017-01/spark-kyro" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2018 吴楚. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>

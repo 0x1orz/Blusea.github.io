@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A simple and awesome blog theme powered by jekyll.">
+  <meta name="keywords" content="Programming, Bio, and DS">
+  <meta name="author" content="楚园">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="楚园">
+  <meta name="twitter:description" content="A simple and awesome blog theme powered by jekyll.">
+  <meta name="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="http://localhost:4000">
+  <meta property="og:title" content="楚园">
+  <meta property="og:description" content="A simple and awesome blog theme powered by jekyll.">
+  <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
+  <title>楚园</title>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="楚园" href="http://localhost:4000 /feed.xml " />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">吴楚</a>
+  <span class="author_job">DS</span>
+  <span class="author_bio mbm">Bio-DS SZ.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+          
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+            
+      <li class="nav-item">
+        <a href="http://localhost:4000/resume/">Resume</a>
+        
+          <span>/</span>
+        
+      </li>
+        
+      <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+        
+      </li>
+       
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('iwuchu@126.com', 'Hello from website');</script>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    <li><a href="http://github.com/Blusea" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        5 AUG 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#tech">tech</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-08/Deep-Learning" class="post-title" title="笔记：Deep Learning">笔记：Deep Learning</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>update: 2018-01-22</p>
+
+<p>最近在用tensorflow做深度学习方面的工作，总有「书到用时方恨少」之感。虽然研究生时上过两门相关课程，但均是浅尝辙止。这回和冬博士讨教，他推荐了<a href="http://www.deeplearningbook.org">Deep Learning</a>这本书，于是打算认真研读下。</p>
+
+<p>思路安排如下：因为已经有数学和机器学习基础，所以跳过第一部份，如果遇到困难，再返查细节。重点阅读第二部份，笔记，如有习题，尽量做习题，并且用tensorflow示意。通览第三部份，笔记，有个大致印象即可。预计耗时3个月。</p>
+
+<h3 id="目录">目录</h3>
+
+<h5 id="1-introduction"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/deep_learning/Introduction/note.ipynb">1 Introduction</a></h5>
+
+<h4 id="part-i-applied-math-and-machine-learning-basics">Part I: Applied Math and Machine Learning Basics</h4>
+
+<h5 id="2-linear-algebra">2 Linear Algebra</h5>
+
+<h5 id="3-probability-and-information-theory">3 Probability and Information Theory</h5>
+
+<h5 id="4-numerical-computation">4 Numerical Computation</h5>
+
+<h5 id="5-machine-learning-basics">5 Machine Learning Basics</h5>
+
+<h4 id="part-ii-modern-practical-deep-networks">Part II: Modern Practical Deep Networks</h4>
+
+<h5 id="6-deep-feedforward-networks"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/deep_learning/Deep_Feedforward_Networks/note.ipynb">6 Deep Feedforward Networks</a></h5>
+
+<h5 id="7-regularization-for-deep-learning"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/deep_learning/Regularization_for_Deep_Learning/note.ipynb">7 Regularization for Deep Learning</a></h5>
+
+<h5 id="8-optimization-for-training-deep-models"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/deep_learning/Optimization_for_Training_Deep_Models/note.ipynb">8 Optimization for Training Deep Models</a></h5>
+
+<h5 id="9-convolutional-networks"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/deep_learning/Convolutional_Networks/note.ipynb">9 Convolutional Networks</a></h5>
+
+<h5 id="10-sequence-modeling-recurrent-and-recursive-nets"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/deep_learning/Sequence_Modeling/note.ipynb">10 Sequence Modeling: Recurrent and Recursive Nets</a></h5>
+
+<h5 id="11-practical-methodology"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/deep_learning/Practial_Methodology/note.ipynb">11 Practical Methodology</a></h5>
+
+<h5 id="12-applications">12 Applications</h5>
+
+<h4 id="part-iii-deep-learning-research">Part III: Deep Learning Research</h4>
+
+<h5 id="13-linear-factor-models">13 Linear Factor Models</h5>
+
+<h5 id="14-autoencoders">14 Autoencoders</h5>
+
+<h5 id="15-representation-learning">15 Representation Learning</h5>
+
+<h5 id="16-structured-probabilistic-models-for-deep-learning">16 Structured Probabilistic Models for Deep Learning</h5>
+
+<h5 id="17-monte-carlo-methods">17 Monte Carlo Methods</h5>
+
+<h5 id="18-confronting-the-partition-function">18 Confronting the Partition Function</h5>
+
+<h5 id="19-approximate-inference">19 Approximate Inference</h5>
+
+<h5 id="20-deep-generative-models">20 Deep Generative Models</h5>
+
+<h3 id="后记">后记</h3>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        26 JUN 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#tech">tech</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-06/machine_learn_logistic_regression" class="post-title" title="机器学习：逻辑回归">机器学习：逻辑回归</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>update: 2017-07-11</p>
+
+<p>逻辑回归在点击率推荐中仍占有半壁江山，于是打算细致做下梳理，包括常见理论变形和工业成熟实现。预计耗时一个月。</p>
+
+<h3 id="0-理论">0. 理论</h3>
+
+<h4 id="01-原理">0.1 原理</h4>
+
+<ul>
+  <li><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/machine_learning/logistic_regression/demo.ipynb">逻辑回归算法简介和Python实现</a></li>
+</ul>
+
+<h4 id="02-寻优算法">0.2 寻优算法</h4>
+
+<p>常规的机器学习算法，通常有两个过程：一是构建模型，并给出损失函数；二是用数值寻优根据损失函数找到合适参数。</p>
+
+<p>数值寻优本身门类很多，如下面博文所述：</p>
+
+<ul>
+  <li><a href="http://www.cnblogs.com/maybe2030/p/4751804.html">常见的几种最优化方法</a></li>
+  <li><a href="http://blog.sciencenet.cn/blog-628137-497041.html">学习总结：局部搜索</a></li>
+  <li><a href="http://blog.csdn.net/fangqingan_java/article/details/48951191">数值优化（Numerical Optimization）学习系列-目录</a></li>
+</ul>
+
+<p>这个领域数理要求很高。不过我个人认为，把它们作为工具看待，了解其特性和区别即可。于是，简要梳理下常见的寻优算子：</p>
+
+<ul>
+  <li>最速下降法：用一阶导数做步长搜索。简单，支持导步，但收敛较慢，震荡。
+    <ul>
+      <li>批量梯度下降法(Batch Gradient Descent, BSD)：全量数据更新。</li>
+      <li>随机梯度下降法(Stochastic Gradient Descent, SGD)：数据随机割成多份，逐份更新。</li>
+    </ul>
+  </li>
+  <li>
+    <p>牛顿法(Newton-Raphson method)：<a href="http://blog.csdn.net/luoleicn/article/details/6527049">简单介绍</a>，其实质是用二维曲面拟合坐标点，再用曲面的切线进行搜索。优点是利用二阶导信息，收敛更快，缺点需借助Hessian矩阵$O(n^2)$，无法处理大量数据。</p>
+  </li>
+  <li>拟牛顿法(Quasi-Newton Methods)：用一阶导信息来近似构造Hessian矩阵，简化运算复杂度。
+    <ul>
+      <li>DFP</li>
+      <li>BFGS:
+        <ul>
+          <li>LBFGS：内存更省。
+            <ul>
+              <li>WQL-QN: 支持L1正则。</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>共轭梯度法(Conjugate gradient method)：搜索方向由当前梯度和以前搜索方向合成，介于最速下降法与牛顿法之间的一个方法。</li>
+</ul>
+
+<p>未来有时间，打算读下经典教材，都是厚部头：</p>
+
+<ul>
+  <li>Convex Optimization, Stephen Boyd, Lieven Vandenberghe.</li>
+  <li>Numerical Optimization, Jorge Nocedal, Stephen J. Wright.</li>
+</ul>
+
+<h3 id="1-工程实现">1. 工程实现</h3>
+
+<ul>
+  <li><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/machine_learning/logistic_regression/spark_ml_lr.ipynb">逻辑回归在spark中的实现简介</a></li>
+  <li><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/tree/master/machine_learning/logistic_regression/sklearn_lr.ipynb">逻辑回归在scikit-learn中的实现简介</a></li>
+  <li><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/machine_learning/logistic_regression/tensorflow_lr.ipynb">逻辑回归在TensorFlow contrib.learn中的实现简介</a></li>
+  <li>Angel</li>
+  <li>R pacakge: glm / glmet</li>
+  <li>Liblinear</li>
+</ul>
+
+<h3 id="2-结语">2. 结语</h3>
+
+<p>逻辑回归的理论既简单又复杂，简单是说二分类的代数式很容易入门看懂，复杂是说对它的拓展可以很深入，如用矩阵式来求解、多分类、复杂的数值优化方法等等。易于入门，难于精通。</p>
+
+<p>虽然线性分类器后面的数理知识坚实又深奥，然而工程实现相对简单，主要是损失函数和导数、及寻优算子二部份。大多数工程实现都大同小异，如sklearn是标签-1/+1的推导，spark在最后代数变换，将0/1标签转成-1/+1，tensorflow是标签0/1的推导。总体而言，代码并不太复杂。</p>
+
+<p>花费了两周时间来梳理基础知识，以后有时间再深入。</p>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        7 JUN 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#misc">misc</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-06/intellij-scala-trim-trailing-space" class="post-title" title="How to remove trailing spaces(行尾空格) for Scala in IntelliJ IDEA 2017">How to remove trailing spaces(行尾空格) for Scala in IntelliJ IDEA 2017</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>update: 2017-06-08</p>
+
+<p>最近IntelliJ升级到2017后，scala文件的行尾空格，不再自动消除，真是逼死洁癖程序员。</p>
+
+<p>开始我的解决方案是在git提交时做防御，如下：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">-a</span> <span class="nt">-m</span> <span class="s2">"xxx"</span>
+git rebase <span class="nt">--whitespace</span><span class="o">=</span>fix HEAD~1
+</code></pre></div></div>
+
+<p>但每回都得敲俩命令，真是不胜其烦。</p>
+
+<p>已经打算弄个bash化名前，幸好我查了下IntelliJ配置，结果找到了做怪的选项。
+解决方案如下：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+ Preferences
+  - Editor
+    - General
+      - Other
+        Strip trailing spaces on Save: [Modified Lines]
+        [ ] Always keep trailing spaces on caret line
+
++ Preferences
+  - Editor
+    - Code Style
+      - Scala
+        - Tabs and Indents:
+          [ ] Keep indents on empty lines
+</code></pre></div></div>
+
+<p>注意，此功能只会在保存文件时触发。</p>
+
+<p>所以，每次提交前，保存全部文件（Save All: Command key + S），即会自动清除。</p>
+
+<p>总之，又可以愉快地搬砖了，以上。</p>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        4 JUN 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#misc">misc</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-06/ml-library-of-python" class="post-title" title="整理：机器学习入门书籍和Python库">整理：机器学习入门书籍和Python库</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>update: 2017-06-08</p>
+
+<p>在工作生活中，会有同事朋友初入门机器学习，希望推荐下这方面的信息。为了一劳永逸，打算梳理下比较好的书籍，及Python生态圈常用的库，以供参考。</p>
+
+<h3 id="a-书籍">A. 书籍</h3>
+
+<p>入门书籍强烈推荐<a href="http://www-bcf.usc.edu/~gareth/ISL/data.html">An Introduction to Statistical Learning with Application in R</a>。概览目前常用的机器学习算法，一本足矣。唯一的遗憾是这本书都是R代码，建议最好给合Python机器学习库<a href="http://scikit-learn.org/stable/user_guide.html">scikit-learn: User Guide</a>，边学边试。</p>
+
+<p>如果不满足，它有本姊妹版<a href="http://statweb.stanford.edu/~tibs/ElemStatLearn/">The Elements of Statistical Learning: Data Mining, Inference, and Prediction</a>，注重数理，难度很高。适合喜欢挑战的朋友。</p>
+
+<h3 id="b-必备工具">B. 必备工具</h3>
+
+<ul>
+  <li>
+    <p><a href="https://www.continuum.io/downloads">Anaconda发行版</a>：专注于数据科学的Python发行版。即使Linux/Mac原生自带Python，也请安装使用它。原因是有二：</p>
+
+    <ol>
+      <li>
+        <p>提供的<code class="highlighter-rouge">conda</code>包管理器，可以简单又正确地装好后续推荐的库。详见<a href="https://conda.io/docs/using/pkgs.html">Managing packages</a>。</p>
+      </li>
+      <li>
+        <p>支持建立不同的环境，并自由切换。详见<a href="https://conda.io/docs/py2or3.html">Managing Python</a>。</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p><a href="http://jupyter.org/">Jupyter Notebook</a>：这是交互式环境，边写边改边看结果，非常便利。因为Anaconda发行版自带此包，无需安装。输入如下命令即启动：</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter notebook
+</code></pre></div>    </div>
+
+    <p>使用效果见这篇笔记：<a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/machine_learning/tree/decision_tree/demo.ipynb">决策树简介和 Python 实现</a>。</p>
+  </li>
+</ul>
+
+<h3 id="c-常用库">C. 常用库</h3>
+
+<h4 id="01-数据处理">0.1 数据处理</h4>
+
+<ul>
+  <li><a href="http://pandas.pydata.org/">Pandas</a>：非常好用的数学分析库。它的文档详尽又丰富，强烈建议认真看一遍。
+    <ul>
+      <li><a href="http://pandas.pydata.org/pandas-docs/stable/10min.html">10 Minutes to pandas</a>：官方入门文档。</li>
+    </ul>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 安装</span>
+conda <span class="nb">install </span>pandas
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://seaborn.pydata.org/">Seaborn</a>：数据可视化。制图很美观，有利于提升逼格。
+    <ul>
+      <li><a href="https://seaborn.pydata.org/tutorial.html">官方文档</a>也很棒。</li>
+    </ul>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 安装</span>
+conda <span class="nb">install </span>seaborn
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h4 id="02-机器学习">0.2 机器学习</h4>
+
+<ul>
+  <li>
+    <p><a href="http://scikit-learn.org/">scikit-learn</a>：流行的机器学习库，单机版。文档详尽，生态丰富，入手门槛较低。</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 安装</span>
+conda <span class="nb">install </span>scikit-learn
+</code></pre></div>    </div>
+  </li>
+  <li><a href="http://spark.apache.org/docs/latest/quick-start.html">PySpark</a>：流行的工业用机器学习库，分布式版。官方文档有限，入手门槛较高。
+    <ul>
+      <li>安装见<a href="https://spark.apache.org/docs/latest/">官方说明</a></li>
+    </ul>
+  </li>
+  <li><a href="https://www.tensorflow.org/">TensorFlow</a>：大热的深度学习库。抽象比较低级，文档散，入手门槛高。
+    <ul>
+      <li>安装，详细见<a href="https://www.tensorflow.org/install/">官方文档</a>。</li>
+    </ul>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda <span class="nb">install</span> <span class="nt">-c</span> conda-forge tensorflow
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="d-扩展">D. 扩展</h3>
+
+<h4 id="01-数学运算">0.1 数学运算</h4>
+
+<ul>
+  <li><a href="http://www.numpy.org/">Numpy</a>：数值计算库，偏底层。</li>
+  <li><a href="https://www.scipy.org/">Scipy</a>：科学计算库，偏底层。</li>
+</ul>
+
+<h4 id="02-文字处理">0.2 文字处理</h4>
+
+<ul>
+  <li><a href="https://github.com/fxsjy/jieba">Jieba</a>：中文分词库。</li>
+</ul>
+
+<h4 id="03-图像处理">0.3 图像处理</h4>
+
+<ul>
+  <li><a href="http://opencv.org/">OpenCV</a>：流行的图像处理库。</li>
+</ul>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        24 MAY 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#misc">misc</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-05/collection-of-spark-doc" class="post-title" title="Study material for Apache Spark">Study material for Apache Spark</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>update: 2017-05-25</p>
+
+<p>Though a detailed API and some brief official guides are delivered with Spark, I still miss the easy-to-use, consistency, and completeness of <a href="http://pandas.pydata.org/pandas-docs/stable/">Pandas’s document</a>. Hence the post is created to collect and share the study material about Spark. Please feel free to contact me if you have any recommendation.</p>
+
+<h3 id="0-for-users">0. For users</h3>
+
+<h4 id="01-dataframe">0.1 DataFrame</h4>
+
+<ul>
+  <li><a href="https://github.com/facaiy/Spark-for-the-Impatient/blob/master/doc/10_minuters_to_spark_dataframe.md">10 Minutes to Spark DataFrame</a>: Written by myself. It contains some code snippets of basic operator when using spark.</li>
+</ul>
+
+<h4 id="02-machine-learning">0.2 Machine Learning</h4>
+<ul>
+  <li><a href="http://spark.apache.org/docs/latest/ml-guide.html">ml-guide</a>: Official.</li>
+</ul>
+
+<h3 id="1-for-developers">1. For developers</h3>
+<ul>
+  <li>
+    <p><a href="https://www.gitbook.com/book/jaceklaskowski/mastering-apache-spark/details">Mastering Apache Spark 2</a>: Third-party. A lot of implementation details are converd in the online book.</p>
+  </li>
+  <li>
+    <p><a href="http://spark.apache.org/contributing.html">Contributing to Spark</a>: Official.</p>
+  </li>
+  <li>
+    <p><a href="http://spark.apache.org/developer-tools.html">Useful Developer Tools</a>: Official. Useful when debugging and testing.</p>
+  </li>
+  <li>
+    <p><a href="http://spark.apache.org/docs/latest/building-spark.html">Building Spark</a>: Official.</p>
+  </li>
+</ul>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        2 MAY 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#misc">misc</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-05/spark-ml-notes" class="post-title" title="Spark ML工程笔记汇总">Spark ML工程笔记汇总</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>update: 2017-05-30</p>
+
+<p>最近开始尝试进行Spark贡献，目前精力主要在ML部份。在反复读代码的过程中，做了些笔记资料，打算分享出来。一则自己备忘，二来也方便他人快速上手。</p>
+
+<p>因为主要是自己看，代码的迭代也快，只会简要做些点注，并不会面面俱到。如果想要深而细，建议阅读<a href="https://www.gitbook.com/book/jaceklaskowski/mastering-apache-spark/details">Mastering Apache Spark 2</a>。</p>
+
+<ul>
+  <li>04-30，<a href="https://www.evernote.com/l/ADDXNX_7MMhI6Kf8Kh6hnCi5Xj0UgkTouJ8">Spark ML: Param架构笔记</a>，比较简单轻量，主要用到了trait的特性。</li>
+  <li>05-01，<a href="https://www.evernote.com/l/ADDTp7Nc6iRFmJRUDola9Jpa9v1J1BAsNeg">Spark ML: Tree架构笔记</a>，为了性能，又是单例，RandomForest写得比较复杂，大量参数飞来飞去。</li>
+  <li>05-25，<a href="https://www.evernote.com/l/ADA6P5HQHv1FTYRYe3HpUkfw4_ambRaBeTw">Spark: Pyspark Param架构笔记</a>，追了下Pyspark参数接口和Scala原生接口的对接关系。</li>
+  <li>05-30，<a href="https://www.evernote.com/shard/s48/nl/1328285495/8016ca0c-2dc4-4f61-8fc6-562cbb72d656/">Spark: Pyspark Tree架构笔记</a>，详列了决策树、随机森林和GBDT在Pyspark中的继承关系。</li>
+</ul>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        23 APR 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#tech">tech</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-04/Functional-Programming-in-Scala" class="post-title" title="笔记：Functional Programming in Scala">笔记：Functional Programming in Scala</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>update: 2017-06-23</p>
+
+<p>早上四点就自然醒了，没了睡意，就整理下最近在看的函数式编程书籍<a href="https://www.manning.com/books/functional-programming-in-scala">Functional Programming in Scala</a>, 2015。同事推荐说有点烧脑，做了开头两章，确实挺好玩的。</p>
+
+<p>官方在Github上有个仓库，放了习题、指导和答案，很方便，见<a href="https://github.com/fpinscala/fpinscala">fpinscala/fpinscala</a>。遗憾的是我没有看到习题配套的单元测试用例来校验正确性，所以自己建了个mvn工程，作业都放在<a href="https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala">facaiy/book_notes</a>。希望尽量都做一遍，耗时预计在两个月。</p>
+
+<h3 id="目录">目录</h3>
+
+<h4 id="part-1-introduction-to-functional-programming">PART 1 INTRODUCTION TO FUNCTIONAL PROGRAMMING</h4>
+
+<h5 id="1-what-is-functional-programming">1 What is functional programming?</h5>
+
+<h5 id="2-getting-started-with-functional-programming-in-scala"><a href="https://github.com/facaiy/book_notes/blob/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c2/ChapterTwo.scala">2 Getting started with functional programming in Scala</a></h5>
+
+<h5 id="3-functional-data-structures"><a href="https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c3">3 Functional data structures</a></h5>
+
+<h5 id="4-handling-errors-without-exceptions"><a href="https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c4">4 Handling errors without exceptions</a></h5>
+
+<h5 id="5-strictness-and-laziness"><a href="https://github.com/facaiy/book_notes/blob/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c5/Stream.scala">5 Strictness and laziness</a></h5>
+
+<h5 id="6-purely-functional-state"><a href="https://github.com/facaiy/book_notes/blob/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c6/State.scala">6 Purely functional state</a></h5>
+
+<h4 id="part-2-functional-design-and-combinator-libraries">PART 2 FUNCTIONAL DESIGN AND COMBINATOR LIBRARIES</h4>
+
+<h5 id="7-purely-functional-parallelism"><a href="https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c7">7 Purely functional parallelism</a></h5>
+
+<h5 id="8-property-based-testing"><a href="https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c8">8 Property-based testing</a></h5>
+
+<h5 id="9-parser-combinators"><a href="https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c9">9 Parser combinators</a></h5>
+
+<h4 id="part-3-common-structures-in-functional-design">PART 3 COMMON STRUCTURES IN FUNCTIONAL DESIGN</h4>
+
+<h5 id="10-monoids"><a href="https://github.com/facaiy/book_notes/blob/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c10/Monoid.scala">10 Monoids</a></h5>
+
+<h5 id="11-monads"><a href="https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c11">11 Monads</a></h5>
+
+<h5 id="12-applicative-and-traversable-functors"><a href="https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c12">12 Applicative and traversable functors</a></h5>
+
+<h4 id="part-4-effects-and-io">PART 4 EFFECTS AND I/O</h4>
+
+<h5 id="13-external-effects-and-io"><a href="https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c13">13 External effects and I/O</a></h5>
+
+<h5 id="14-local-effects-and-mutable-state">14 Local effects and mutable state</h5>
+
+<h5 id="15-stream-processing-and-incremental-io"><a href="https://github.com/facaiy/book_notes/blob/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c15/Process.scala">15 Stream processing and incremental I/O</a></h5>
+
+<h3 id="后记">后记</h3>
+
+<p>学习时，对于第一至三部分，下了很多工夫，基本完成了全部习题。而最后的第四部份，相对更复杂，也不在兴趣点上，只是泛泛一览而过。</p>
+
+<p>主要收获有两点：一是熟悉了scala的诸多高级特性，如Generic, Implicit, Lambda type等等。二是了解了函数式编程的思想和方法。对函数式编程的印象中，有两点最深刻：一是它很灵活，扩展性和可组装性强大，擅长于抽出模式，很适合用于编写库；二是它很像是在写编译器，常常会用个数据结构描述计算，再用具体的辅助函数来解释执行，将描述与执行分离，可以在后级做优化，很有趣。</p>
+
+<p>在编写工作代码时，我用书中的知识技巧完成了两个库。学以致用，好生快乐！详见：</p>
+
+<ul>
+  <li><a href="https://github.com/facaiy/DAG-lite">facaiy/DAG-lite</a>: 轻量调度库。借鉴了书中懒惰求值和并行的设计。</li>
+  <li><a href="https://github.com/facaiy/math-expression-parser">facaiy/math-expression-parser</a>：数学表达式解析器。借鉴了书中Parser的处理。</li>
+</ul>
+
+<p>两个月的时间，还是挺漫长的。总算结束了，大功告成，又如释重负。</p>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        26 FEB 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#misc">misc</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-02/note_programming_in_scala" class="post-title" title="笔记: Programming in Scala, third edition">笔记: Programming in Scala, third edition</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>前段时间看了此书，简要书摘如下，以便个人快速回顾。</p>
+
+<h3 id="4-classes-and-objects">4. Classes and Objects</h3>
+<p><code class="highlighter-rouge">extends App</code>: don’t need write <code class="highlighter-rouge">main</code> function.</p>
+
+<h4 id="52-literals">5.2 Literals</h4>
+<p>literal: a way to write a constant value directly in code.</p>
+
+<h5 id="inter-literals">Inter literals</h5>
+
+<h5 id="floating-point-literals">Floating point literals</h5>
+
+<h5 id="character-literals">Character literals</h5>
+
+<h5 id="string-literals">String literals</h5>
+<p>raw string:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">println</span><span class="o">(</span><span class="s">"""|Welcome to Ultamix 3000.
+           |Type "HELP" for help."""</span><span class="o">.</span><span class="n">stripMargin</span><span class="o">)</span>
+</code></pre></div></div>
+
+<h5 id="symbol-literals">Symbol literals</h5>
+<p>``ident`</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="ss">'aSymbol
+</span><span class="k">val</span> <span class="n">nm</span> <span class="k">=</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span>
+</code></pre></div></div>
+
+<h5 id="boolean-literals">Boolean literals</h5>
+<p><code class="highlighter-rouge">true</code> and <code class="highlighter-rouge">false</code></p>
+
+<h4 id="53-string-interpolation">5.3 String Interpolation</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span><span class="s">"Hello, $name"</span>
+<span class="n">f</span><span class="s">"${math.Pi}%.5f"</span>
+<span class="n">raw</span><span class="s">"No\\\\escape!"</span>
+</code></pre></div></div>
+
+<h4 id="54-operators-are-methods">5.4 Operators are Methods</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">sum</span> <span class="k">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1">// operator is method: 1.+(2)
+</span><span class="n">s</span> <span class="n">indexof</span> <span class="o">(</span><span class="sc">'o'</span><span class="o">,</span> <span class="mi">5</span><span class="o">)</span> <span class="c1">// method is operator: s.indexof('o', 5)
+</span></code></pre></div></div>
+
+<p>Operators:</p>
+
+<ul>
+  <li>infix: <code class="highlighter-rouge">7 + 2</code></li>
+  <li>prefix: unary
+    <ul>
+      <li>only four identifiers: <code class="highlighter-rouge">+</code>, <code class="highlighter-rouge">-</code>, <code class="highlighter-rouge">!</code>, <code class="highlighter-rouge">~</code></li>
+    </ul>
+
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="o">-</span><span class="mf">2.0</span>
+<span class="n">scala</span><span class="o">&gt;</span> <span class="o">(</span><span class="mf">2.0</span><span class="o">).</span><span class="n">unary_-</span>
+</code></pre></div>    </div>
+  </li>
+  <li>postfix: unary
+    <ul>
+      <li>empty parameter <code class="highlighter-rouge">s.toLowerCase</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="55-arithmetic-operations">5.5 Arithmetic Operations</h4>
+
+<h4 id="56-relational-and-logical-operations">5.6 Relational and Logical Operations</h4>
+<p>short-circuit?</p>
+
+<p>operator = method</p>
+
+<ul>
+  <li>normal arguments: evaluated before entering a method</li>
+  <li>by-name parameters: delay</li>
+</ul>
+
+<h4 id="57-bitwise-operations">5.7 Bitwise Operations</h4>
+
+<h4 id="58-object-equality">5.8 Object Equality</h4>
+<p>comparing value equality: <code class="highlighter-rouge">==</code>(<code class="highlighter-rouge">equals</code>), <code class="highlighter-rouge">!=</code></p>
+
+<p>comparing reference equality: <code class="highlighter-rouge">eq</code> and <code class="highlighter-rouge">ne</code></p>
+
+<h4 id="59-operator-precedence-and-associativity">5.9 Operator Precedence and Associativity</h4>
+
+<h4 id="510-rich-wrappers">5.10 Rich Wrappers</h4>
+
+<h3 id="6-functional-objects">6. Functional Objects</h3>
+
+<h4 id="62-constructing-rational">6.2 Constructing Rational</h4>
+<p>any code which isn’t part of a field or a method definition -&gt; primary constructor.</p>
+
+<h4 id="64-checking-preconditions">6.4 Checking Preconditions</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Rational</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">d</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">require</span><span class="o">(</span><span class="n">d</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="65-adding-fields">6.5 Adding Fields</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Rational</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">d</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// class parameters
+</span>  <span class="k">val</span> <span class="n">numer</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">n</span> <span class="c1">// field
+</span><span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="67-auxiliary-constructors">6.7 Auxiliary Constructors</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Rational</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">d</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="k">this</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="k">this</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="mi">1</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>primary constructor: single point of entry of a class.</li>
+  <li>only the primary constructor can invoke a superclass constructor.</li>
+</ul>
+
+<h4 id="68-private-fields-and-methods">6.8 Private Fields and Methods</h4>
+
+<h4 id="610-identifiers-in-scala">6.10 Identifiers in Scala</h4>
+<ul>
+  <li>alphanumeric identifier</li>
+  <li>operator identifier</li>
+  <li>mixed identifier: <code class="highlighter-rouge">unary_+</code></li>
+  <li>literal identifier: <code class="highlighter-rouge">`yield`</code></li>
+</ul>
+
+<h4 id="611-method-overloading">6.11 Method Overloading</h4>
+<p>chosen overloaded version: best matches the static types of the arguments.</p>
+
+<h4 id="612-implicit-conversions">6.12 Implicit Conversions</h4>
+
+<h3 id="7-built-in-control-structures">7. Built-in Control Structures</h3>
+<p>only control structures: <code class="highlighter-rouge">if</code>, <code class="highlighter-rouge">while</code>, <code class="highlighter-rouge">for</code>, <code class="highlighter-rouge">try</code>, <code class="highlighter-rouge">match</code>, and function calls.</p>
+
+<p><code class="highlighter-rouge">()</code>: unit value</p>
+<ul>
+  <li>assignment in scala <em>always</em> results in the <strong>unit value</strong>.</li>
+</ul>
+
+<h4 id="73-for-expressions">7.3 For Expressions</h4>
+<p><code class="highlighter-rouge">to</code> and <code class="highlighter-rouge">until</code></p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="o">(</span><span class="n">file</span> <span class="k">&lt;-</span> <span class="n">filesHere</span>
+     <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">isFile</span> <span class="c1">// filter
+</span>	 <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">getName</span><span class="o">.</span><span class="n">endsWith</span><span class="o">(</span><span class="s">".scala"</span><span class="o">)</span>
+<span class="o">)</span> <span class="n">print</span><span class="o">(</span><span class="n">file</span><span class="o">)</span>
+</code></pre></div></div>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">scalaFiles</span> <span class="k">=</span> <span class="k">for</span> <span class="o">(</span><span class="n">file</span> <span class="k">&lt;-</span> <span class="n">filesHere</span>
+     <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">isFile</span> <span class="c1">// filter
+</span>	 <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">getName</span><span class="o">.</span><span class="n">endsWith</span><span class="o">(</span><span class="s">".scala"</span><span class="o">)</span>
+<span class="o">)</span> <span class="k">yield</span> <span class="o">{</span><span class="n">file</span><span class="o">}</span> <span class="c1">// return collectons
+// or `yield file`
+</span></code></pre></div></div>
+
+<h4 id="74-exception-handing-with-try-expressions">7.4 Exception Handing with Try Expressions</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="n">f</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">FileReader</span><span class="o">(</span><span class="s">"input.txt"</span><span class="o">)</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="n">ex</span><span class="k">:</span> <span class="kt">FileNotFoundException</span> <span class="o">=&gt;</span> <span class="c1">//....
+</span><span class="o">}</span>
+</code></pre></div></div>
+
+<p>avoid returning values from finally clauses.</p>
+
+<h4 id="77-variable-scope">7.7 Variable Scope</h4>
+<p>an inner variable will <em>shadow</em> a like-named outer variable.</p>
+
+<h3 id="8-functions-and-closures">8. Functions and Closures</h3>
+
+<h4 id="82-local-functions">8.2 Local Functions</h4>
+<p>local functions can access the parameters of their enclosing function.</p>
+
+<h4 id="85-placeholder-syntax">8.5 Placeholder Syntax</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">f</span> <span class="k">=</span> <span class="o">(</span><span class="k">_:</span> <span class="kt">Int</span><span class="o">)</span> <span class="o">+</span> <span class="o">(</span><span class="k">_:</span> <span class="kt">Int</span><span class="o">)</span>
+</code></pre></div></div>
+
+<h4 id="86-partially-applied-functions">8.6 Partially Applied Functions</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">sum</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">c</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+
+<span class="k">val</span> <span class="n">a</span> <span class="k">=</span> <span class="n">sum</span> <span class="k">_</span>
+<span class="k">val</span> <span class="n">b</span> <span class="k">=</span> <span class="n">sum</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="k">_:</span> <span class="kt">Int</span><span class="o">,</span> <span class="mi">3</span><span class="o">)</span>
+
+</code></pre></div></div>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">someNumbers</span><span class="o">.</span><span class="n">foreach</span><span class="o">(</span><span class="n">println</span> <span class="k">_</span><span class="o">)</span>
+<span class="n">someNumbers</span><span class="o">.</span><span class="n">foreach</span><span class="o">(</span><span class="n">println</span><span class="o">)</span>
+</code></pre></div></div>
+
+<h4 id="87-closures">8.7 Closures</h4>
+
+<ul>
+  <li>
+    <p>closures capture variables themselves, not the value to which</p>
+
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">more</span> <span class="k">=</span> <span class="mi">1</span>
+<span class="k">val</span> <span class="n">addMore</span> <span class="k">=</span> <span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">more</span> <span class="c1">// dynamical bind
+// function value (the object) addMore is a closure
+</span><span class="n">more</span> <span class="k">=</span> <span class="mi">9999</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Changes: inside &lt;==&gt; outside</p>
+
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">sum</span> <span class="k">=</span> <span class="mi">0</span>
+<span class="n">someNumbers</span><span class="o">.</span><span class="n">foreach</span><span class="o">(</span><span class="n">sum</span> <span class="o">+=</span> <span class="k">_</span><span class="o">)</span>
+<span class="c1">//or
+</span><span class="k">val</span> <span class="n">closure</span> <span class="k">=</span> <span class="n">x</span> <span class="k">=&gt;</span> <span class="o">{</span><span class="n">x</span> <span class="o">+</span> <span class="n">sum</span><span class="o">;</span> <span class="o">()}</span>
+<span class="n">someNumbers</span><span class="o">.</span><span class="n">foreach</span><span class="o">(</span><span class="n">closure</span><span class="o">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h4 id="88-special-function-call-forms">8.8 Special Function Call Forms</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Repeated parameters
+</span><span class="n">echo</span> <span class="o">(</span><span class="n">arr</span><span class="k">:</span> <span class="k">_</span><span class="kt">*</span><span class="o">)</span>
+
+<span class="c1">// Named arguments
+</span><span class="n">speed</span><span class="o">(</span><span class="n">time</span> <span class="k">=</span> <span class="mi">10</span><span class="o">,</span> <span class="n">distance</span> <span class="k">=</span> <span class="mi">100</span><span class="o">)</span>
+</code></pre></div></div>
+
+<h4 id="89-tail-recursion">8.9 Tail Recursion</h4>
+<p>Often, a recusive solution is more elegant and concise than a loop-based one.</p>
+
+<p>Note: recusive call is the <em>last</em> thing that happens in the <em>evaluation</em> of function approximate’s body.</p>
+
+<h3 id="9-control-abstraction">9. Control Abstraction</h3>
+
+<h4 id="93-currying">9.3 Currying</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">curriedSum</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="k">val</span> <span class="n">onePlus</span> <span class="k">=</span> <span class="n">curriedSum</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span><span class="k">_</span>
+</code></pre></div></div>
+
+<h4 id="95-by-name-parameters">9.5 By-name Parameters</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">myAssert</span><span class="o">(</span><span class="n">predicate</span><span class="k">:</span> <span class="o">()</span> <span class="o">=&gt;</span> <span class="nc">Boolean</span><span class="o">)</span> <span class="k">=</span> <span class="c1">//...
+</span>
+<span class="k">def</span> <span class="n">byNameAssert</span><span class="o">(</span><span class="n">predicate</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Boolean</span><span class="o">)</span> <span class="k">=</span> <span class="c1">//...
+</span></code></pre></div></div>
+
+<h3 id="10-composition-and-inheritance">10. Composition and Inheritance</h3>
+
+<h4 id="102-abstract-classes">10.2 Abstract Classes</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">abstract</span> <span class="k">class</span> <span class="nc">Element</span> <span class="o">{}</span>
+</code></pre></div></div>
+
+<h4 id="103-defining-parameterless-methods">10.3 Defining Parameterless Methods</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">width</span><span class="k">:</span> <span class="kt">Int</span> <span class="c1">// access mutable state, computed on each method call
+</span>
+<span class="k">val</span> <span class="n">width</span><span class="k">:</span> <span class="kt">Int</span> <span class="c1">// precomputed when initialized
+</span></code></pre></div></div>
+
+<h4 id="105-overriding-methods-and-fields">10.5 Overriding Methods and Fields</h4>
+<p>field and methods belong to the same namespace =&gt; overrided by each other</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">WontCompile</span> <span class="o">{</span>
+  <span class="k">private</span> <span class="k">var</span> <span class="n">f</span> <span class="k">=</span> <span class="mi">0</span> <span class="c1">// Won't compile, because a field
+</span>  <span class="k">def</span> <span class="n">f</span> <span class="k">=</span> <span class="mi">1</span>         <span class="c1">// and methd have the same name
+</span><span class="o">}</span>
+</code></pre></div></div>
+
+<p>scala’s two namespaces are:</p>
+
+<ul>
+  <li>values: fields, methods, packages, and singleton objects;</li>
+  <li>types: class and trait names.</li>
+</ul>
+
+<h4 id="106-defining-parameteric-fields">10.6 Defining Parameteric Fields</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Cat</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="n">dangerous</span> <span class="k">=</span> <span class="kc">false</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">Tiger</span> <span class="o">{</span>
+  <span class="k">override</span> <span class="k">val</span> <span class="n">dangerous</span><span class="k">:</span> <span class="kt">Boolean</span><span class="o">,</span> <span class="c1">// parametric field definition
+</span>  <span class="k">private</span> <span class="k">var</span> <span class="n">age</span><span class="k">:</span> <span class="kt">Int</span>
+<span class="o">}</span> <span class="k">extends</span> <span class="nc">Cat</span>
+</code></pre></div></div>
+
+<h4 id="107-invoking-superclass-constructors">10.7 Invoking Superclass Constructors</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">LineElements</span><span class="o">(</span><span class="n">s</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">ArrayElement</span><span class="o">(</span><span class="nc">Array</span><span class="o">(</span><span class="n">s</span><span class="o">))</span> <span class="o">{}</span>
+</code></pre></div></div>
+
+<h4 id="108-using-overriding-modifiers">10.8 Using Overriding Modifiers</h4>
+
+<h4 id="109-polymorphism-and-dynamic-binding">10.9 Polymorphism and Dynamic Binding</h4>
+<p>dynamically bound: actual method implementation invoked &lt;= runtime based on the class of the object, not the type of the variable or expression.</p>
+
+<p>notice: override method.</p>
+
+<h4 id="1010-declaring-final-members">10.10 Declaring Final Members</h4>
+<p>final: cannot be ovverriden or subclassed</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="k">class</span> <span class="nc">ArryElement</span> <span class="o">{</span>
+  <span class="k">final</span> <span class="n">overriden</span> <span class="k">def</span> <span class="n">demon</span><span class="o">()</span> <span class="k">=</span> <span class="o">{}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="1011-using-composition-and-inheritance">10.11 Using Composition and Inheritance</h4>
+<p>inheritance relation:</p>
+
+<ul>
+  <li>whether it models an <code class="highlighter-rouge">is-a</code> relationship?</li>
+  <li>whether clients will want to use the subclass type as a superclass type?</li>
+</ul>
+
+<h3 id="11-scalas-hierarchy">11. Scala’s Hierarchy</h3>
+
+<h4 id="111-scalas-class-hierarchy">11.1 Scala’s Class Hierarchy</h4>
+<p>individual classes can tailor what <code class="highlighter-rouge">==</code> or <code class="highlighter-rouge">!=</code> means by overriding the <code class="highlighter-rouge">equals</code> method.</p>
+
+<p>class AnyRef defines an <code class="highlighter-rouge">eq</code> mothod: reference equality.</p>
+
+<h3 id="12-traits">12. Traits</h3>
+
+<h4 id="121-how-traits-work">12.1 How Traits Work</h4>
+<p>A trait also defines a type.</p>
+
+<p>trait definition = class definition with only two exceptions:</p>
+
+<ul>
+  <li>
+    <p>a trait cannot have any “class” parameter.</p>
+
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">trait</span> <span class="nc">NoPoint</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="c1">// Does not compile
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>super calls are statically bound in classes, whereas they are dynamically bound in traits.</p>
+  </li>
+</ul>
+
+<h4 id="122-thin-versus-rich-interfaces">12.2 Thin Versus Rich Interfaces</h4>
+<p>traits can enrich a thin interface, making it into a rich interface.</p>
+
+<p>traits:</p>
+
+<ul>
+  <li>a small number of abstract methods;</li>
+  <li>a potentially large number of concrete methods.</li>
+</ul>
+
+<h4 id="124-the-ordered-trait">12.4 The Ordered Trait</h4>
+<p>type paramter</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Rational</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">d</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Ordered</span><span class="o">[</span><span class="kt">Rational</span><span class="o">]</span> <span class="o">{}</span>
+</code></pre></div></div>
+
+<h4 id="125-traits-as-stackable-modifications">12.5 Traits As Stackable Modifications</h4>
+<p>super call in a trai are dynamically bound(even for abstract method):traits futhest to the right take effect first, roughly speaking.</p>
+
+<h4 id="126-why-not-multiple-inheritance">12.6 Why not Multiple Inheritance?</h4>
+<p>mutliple inheritance: the method called by a supercall can be determined right where the call appears.</p>
+
+<p>traits: the method called is determined by a <strong>linearization</strong> of the classes and traits that are miexed into a class.</p>
+
+<h4 id="127-to-trait-or-not-to-trait">12.7 To Trait or not to Trait?</h4>
+
+<ul>
+  <li>If the behavior will not be reused ==&gt; concrete class.</li>
+  <li>If it might be reused in multiple, unrelated classes ==&gt; trait.</li>
+  <li>If you want to inherit from it in java code ==&gt; abstract class.</li>
+  <li>If you plan to distribute it in complied form, and expected others inheritting from it ==&gt; abstract class.</li>
+  <li>If you still do not know ==&gt; trait.</li>
+</ul>
+
+<h3 id="13-packages-and-imports">13. Packages and Imports</h3>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 1
+</span><span class="k">package</span> <span class="nn">bobsrockets.navigation</span>
+<span class="k">class</span> <span class="nc">Navigator</span>
+
+<span class="c1">// 2
+</span><span class="k">package</span> <span class="nn">bobsrockets.navigation</span> <span class="o">{</span>
+  <span class="k">class</span> <span class="nc">Navigator</span>
+<span class="o">}</span>
+
+<span class="c1">// 3
+</span><span class="k">package</span> <span class="nn">bobsrockets</span> <span class="o">{</span>
+  <span class="k">package</span> <span class="nn">navigation</span> <span class="o">{</span>
+    <span class="k">class</span> <span class="nc">Navigator</span>
+	<span class="c1">// all names accessible in scopes outside the package
+</span>  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">_root_</code>: outside any packagea user can write.</p>
+
+<h4 id="133-imports">13.3 Imports</h4>
+<p>three principal differences with Java:</p>
+
+<ol>
+  <li>may appear anywhere.</li>
+  <li>may refer to objects(singleton or regular) in addition to packages.</li>
+  <li>let you rename and hide some of the imported members.</li>
+</ol>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">Fruits.</span><span class="o">{</span><span class="nc">Apple</span><span class="o">,</span> <span class="nc">Orange</span><span class="o">}</span>
+<span class="k">import</span> <span class="nn">Fruits.</span><span class="o">{</span><span class="nc">Apple</span> <span class="k">=&gt;</span> <span class="nc">Mcintosh</span><span class="o">,</span> <span class="nc">Orange</span><span class="o">}</span>
+<span class="k">import</span> <span class="nn">Fruits.</span><span class="o">{</span><span class="nc">Apple</span> <span class="k">=&gt;</span> <span class="k">_</span><span class="o">,</span> <span class="nc">Orange</span><span class="o">}</span>
+<span class="k">import</span> <span class="nn">Fruits._</span>
+<span class="k">import</span> <span class="nn">Fruits.</span><span class="o">{</span><span class="nc">Apple</span> <span class="k">=&gt;</span> <span class="k">_</span><span class="o">,</span> <span class="k">_</span><span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="134-implict-imports">13.4 Implict Imports</h4>
+<p>Scala adds some imports implicitly to every program:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">java.lang._</span>
+<span class="k">import</span> <span class="nn">scala._</span>
+<span class="k">import</span> <span class="nn">Predef._</span>
+</code></pre></div></div>
+
+<p>special: later imports overshadow earlier ones.</p>
+
+<h4 id="135-access-modifiers">13.5 Access Modifiers</h4>
+
+<ul>
+  <li>private: visible only inside. It applies also for inner classes.</li>
+  <li>protected: only accessible from subclass.</li>
+  <li>public: not labeled.</li>
+</ul>
+
+<p>A class shares all its access rights with its companion object and vice versa.</p>
+
+<h4 id="136-package-objects">13.6 Package Objects</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// In file bobsdelights/package.scala
+</span><span class="n">pacakge</span> <span class="k">object</span> <span class="nc">bobsdelights</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">helpMethods</span> <span class="k">=</span> <span class="o">{}</span> <span class="c1">// package-wide type aliases
+</span>                       <span class="c1">// or implicit conversions.
+</span><span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="14-assertions-and-tests">14. Assertions and Tests</h3>
+<p>ScalaTest is the most flexible Scala test framework.</p>
+
+<h3 id="15-case-classes-and-pattern-matching">15. Case Classes and Pattern Matching</h3>
+
+<h4 id="152-kinds-of-patterns">15.2 Kinds of Patterns</h4>
+
+<ul>
+  <li>Wildcard patterns <code class="highlighter-rouge">case _ =&gt;</code></li>
+  <li>Constant patterns <code class="highlighter-rouge">case 5 =&gt;</code> or <code class="highlighter-rouge">case Pi =&gt;</code></li>
+  <li>
+    <p>Variable patterns <code class="highlighter-rouge">case x =&gt; </code>
+a simple name starting with a lowercase letter ==&gt; variable;
+other =&gt; constant.</p>
+
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">math.Pi</span>
+<span class="k">val</span> <span class="n">pi</span> <span class="k">=</span> <span class="nc">Pi</span>
+
+<span class="n">E</span> <span class="k">match</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="nc">Pi</span> <span class="k">=&gt;</span> <span class="c1">// constant
+</span>  <span class="k">case</span> <span class="n">pi</span> <span class="k">=&gt;</span> <span class="c1">// variable
+</span>  <span class="k">case</span> <span class="n">`pi`</span> <span class="k">=&gt;</span> <span class="c1">// constant
+</span><span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Constructor patterns</p>
+
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">expr</span> <span class="k">match</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="nc">Binop</span><span class="o">(</span><span class="s">"+"</span><span class="o">,</span> <span class="n">e</span><span class="o">,</span> <span class="nc">Number</span><span class="o">(</span><span class="mi">0</span><span class="o">))</span> <span class="k">=&gt;</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Sequence patterns</p>
+
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">expr</span> <span class="k">match</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="nc">List</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="k">_</span><span class="o">,</span> <span class="k">_</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="c1">// Or,
+</span>  <span class="k">case</span> <span class="nc">List</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="k">_</span><span class="o">*)</span> <span class="k">=&gt;</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Tuple patterns: <code class="highlighter-rouge">case (a, b, c) =&gt; </code></li>
+  <li>
+    <p>Typed patterns</p>
+
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="k">match</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="n">s</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="n">length</span>
+  <span class="k">case</span> <span class="n">m</span><span class="k">:</span> <span class="kt">Map</span><span class="o">[</span><span class="k">_</span>, <span class="k">_</span><span class="o">]</span> <span class="k">=&gt;</span> <span class="n">m</span><span class="o">.</span><span class="n">size</span> <span class="c1">//type erasure, exception: Array
+</span>  <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> <span class="o">-</span><span class="mi">1</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Variable binding</p>
+
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">expr</span> <span class="k">match</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="nc">Unop</span><span class="o">(</span><span class="s">"abs"</span><span class="o">,</span> <span class="n">e</span> <span class="k">@</span> <span class="nc">Unop</span><span class="o">(</span><span class="s">"abs"</span><span class="o">),</span> <span class="k">_</span><span class="o">))</span> <span class="k">=&gt;</span> <span class="n">e</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h4 id="153-pattern-guards">15.3 Pattern Guards</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">e</span> <span class="k">match</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="nc">BinOp</span><span class="o">(</span><span class="s">"+"</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">x</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="c1">// Error
+</span>  <span class="k">case</span> <span class="nc">Binop</span><span class="o">(</span><span class="s">"+"</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span> <span class="k">=&gt;</span> <span class="c1">// OK
+</span>
+  <span class="k">case</span> <span class="n">n</span><span class="k">:</span> <span class="kt">Int</span> <span class="kt">if</span> <span class="err">0</span> <span class="kt">&lt;</span> <span class="kt">n</span> <span class="o">=&gt;</span>
+  <span class="k">case</span> <span class="n">s</span><span class="k">:</span> <span class="kt">String</span> <span class="kt">if</span> <span class="kt">s</span><span class="o">(</span><span class="err">0</span><span class="o">)</span> <span class="o">=</span><span class="k">=</span> <span class="s">"a"</span> <span class="k">=&gt;</span> 
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="155-sealed-classes">15.5 Sealed Classes</h4>
+<p>sealed: A sealed class cannot have any new subclass added except the ones in the same file. useful for case class.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span><span class="n">e</span><span class="k">:</span> <span class="kt">@unchecked</span><span class="o">)</span> <span class="k">match</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="nc">Number</span><span class="o">(</span><span class="k">_</span><span class="o">)</span> <span class="k">=&gt;</span>
+  <span class="k">case</span> <span class="nc">Var</span><span class="o">(</span><span class="k">_</span><span class="o">)</span> <span class="k">=&gt;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="157-patterns-everywhere">15.7 Patterns Everywhere</h4>
+<ul>
+  <li>
+    <p>Patterns in variable definitions.</p>
+
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="o">(</span><span class="n">number</span><span class="o">,</span> <span class="n">string</span><span class="o">)</span> <span class="k">=</span> <span class="o">(</span><span class="mi">123</span><span class="o">,</span> <span class="s">"abc"</span><span class="o">)</span>
+<span class="k">val</span> <span class="nc">BinOp</span><span class="o">(</span><span class="n">op</span><span class="o">,</span> <span class="n">left</span><span class="o">,</span> <span class="n">right</span><span class="o">)</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">BinOp</span><span class="o">(</span><span class="s">"*"</span><span class="o">,</span> <span class="nc">Number</span><span class="o">(</span><span class="mi">5</span><span class="o">),</span> <span class="nc">Number</span><span class="o">(</span><span class="mi">1</span><span class="o">))</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Case sequences as partial functions.</li>
+  <li>
+    <p>Patterns in for expressions.</p>
+
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="o">(</span><span class="nc">Some</span><span class="o">(</span><span class="n">fruit</span><span class="o">)</span> <span class="k">&lt;-</span> <span class="n">results</span><span class="o">)</span> <span class="n">println</span><span class="o">(</span><span class="n">fruit</span><span class="o">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="16-working-with-lists">16. Working with Lists</h3>
+<p>List:</p>
+
+<ul>
+  <li>immutable</li>
+  <li>recursive structure</li>
+  <li>homogeneous</li>
+  <li>covariant</li>
+</ul>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nc">List</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">,</span> <span class="n">c</span><span class="o">)</span> <span class="k">=</span> <span class="n">fruit</span>
+
+<span class="n">x</span> <span class="o">::</span> <span class="n">xs</span> <span class="o">==</span> <span class="o">::(</span><span class="n">x</span><span class="o">,</span> <span class="n">xs</span><span class="o">)</span>
+
+<span class="n">xs</span> <span class="o">:::</span> <span class="n">ys</span>
+
+<span class="n">xs</span><span class="o">.</span><span class="n">length</span>
+<span class="n">xs</span><span class="o">.</span><span class="n">head</span> <span class="o">::</span> <span class="n">xs</span><span class="o">.</span><span class="n">tail</span> <span class="o">==</span> <span class="n">xs</span><span class="o">.</span><span class="n">init</span> <span class="o">::</span> <span class="n">xs</span><span class="o">.</span><span class="n">last</span>
+<span class="n">xs</span><span class="o">.</span><span class="n">reverse</span><span class="o">.</span><span class="n">reverse</span> <span class="o">==</span> <span class="n">xs</span>
+<span class="n">xs</span> <span class="n">splitAt</span> <span class="n">n</span> <span class="o">==</span> <span class="o">(</span><span class="n">xs</span> <span class="n">take</span> <span class="n">n</span><span class="o">,</span> <span class="n">xs</span> <span class="n">drop</span> <span class="n">n</span><span class="o">)</span>
+<span class="n">xs</span> <span class="n">apply</span> <span class="mi">2</span> <span class="o">==</span> <span class="n">xs</span><span class="o">.</span><span class="n">drop</span><span class="o">(</span><span class="mi">2</span><span class="o">).</span><span class="n">head</span>
+<span class="n">xs</span><span class="o">.</span><span class="n">indices</span>
+
+<span class="n">xs</span><span class="o">.</span><span class="n">flatten</span>
+<span class="o">(</span><span class="n">xs</span> <span class="n">zip</span> <span class="n">ys</span><span class="o">).</span><span class="n">unzip</span> <span class="o">==</span> <span class="o">(</span><span class="n">xs</span><span class="o">,</span> <span class="n">ys</span><span class="o">)</span>
+
+<span class="n">xs</span> <span class="n">partition</span> <span class="n">p</span> <span class="o">==</span> <span class="o">(</span><span class="n">xs</span> <span class="n">filter</span> <span class="n">p</span><span class="o">,</span> <span class="n">xs</span> <span class="n">filter</span><span class="o">(!</span><span class="n">p</span><span class="o">(</span><span class="k">_</span><span class="o">)))</span>
+
+<span class="n">xs</span> <span class="n">span</span> <span class="n">p</span> <span class="o">==</span> <span class="o">(</span><span class="n">xs</span> <span class="n">takeWhile</span> <span class="n">p</span><span class="o">,</span> <span class="n">xs</span> <span class="n">dropWhile</span> <span class="n">p</span><span class="o">)</span>
+
+<span class="n">xs</span><span class="o">.</span><span class="n">forall</span><span class="o">(</span><span class="k">_</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span>
+<span class="n">xs</span><span class="o">.</span><span class="n">exists</span><span class="o">(</span><span class="k">_</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span>
+
+<span class="o">(</span><span class="mi">0</span> <span class="o">/:</span> <span class="n">xs</span><span class="o">)(</span><span class="k">_</span> <span class="o">+</span> <span class="k">_</span><span class="o">)</span>
+<span class="o">(</span><span class="n">xs</span> <span class="o">:\</span> <span class="mi">0</span><span class="o">)(</span><span class="k">_</span> <span class="o">+</span> <span class="k">_</span><span class="o">)</span>
+
+<span class="n">xs</span><span class="o">.</span><span class="n">sortWith</span><span class="o">(</span><span class="k">_</span> <span class="o">&lt;</span> <span class="k">_</span><span class="o">)</span> <span class="c1">//merge sort
+</span></code></pre></div></div>
+
+<h4 id="168-methods-of-the-list-object">16.8 Methods of the List Object</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">List</span><span class="o">.</span><span class="n">apply</span>
+<span class="nc">List</span><span class="o">.</span><span class="n">range</span>
+<span class="nc">List</span><span class="o">.</span><span class="n">fill</span>
+<span class="nc">List</span><span class="o">.</span><span class="n">tabulate</span>
+<span class="nc">List</span><span class="o">.</span><span class="n">concat</span>
+</code></pre></div></div>
+
+<h4 id="1610-understanding-scalas-type-inference-algorithm">16.10 Understanding Scala’s Type Inference Algorithm</h4>
+<p>Type inference is Scala is flow based.</p>
+
+<p>curried function: non-function arguments at first, and then function arguments.</p>
+
+<h3 id="17-working-with-other-collections">17. Working with Other Collections</h3>
+
+<h4 id="171-sequences">17.1 Sequences</h4>
+<ul>
+  <li>Lists</li>
+  <li>Arrays</li>
+  <li>List buffers</li>
+  <li>Array buffers</li>
+  <li>Strings</li>
+</ul>
+
+<h4 id="172-sets-and-maps">17.2 Sets and Maps</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">c</span><span class="k">:</span> <span class="kt">scala.collection.immutable.Set</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span>
+<span class="k">val</span> <span class="n">c</span><span class="k">:</span> <span class="kt">scala.collection.mutable.Set</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span>
+</code></pre></div></div>
+
+<h4 id="174-initializing-collections">17.4 Initializing Collections</h4>
+<p><code class="highlighter-rouge">xs.toArray</code>: order is same with iterator’s. copying is expensive.</p>
+
+<h3 id="18-mutable-objects">18. Mutable Objects</h3>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">hour</span> <span class="k">=</span> <span class="mi">12</span> <span class="c1">// equals
+</span>
+<span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">var</span> <span class="n">h</span> <span class="k">=</span> <span class="mi">12</span>
+<span class="k">def</span> <span class="n">hour</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">h</span>
+<span class="k">def</span> <span class="n">hour_=</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span><span class="n">h</span> <span class="k">=</span> <span class="n">x</span><span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">celsius</span><span class="k">:</span> <span class="kt">Float</span> <span class="o">=</span> <span class="k">_</span> <span class="c1">// init, default value, 0
+</span><span class="k">var</span> <span class="n">celsius</span><span class="k">:</span> <span class="kt">Float</span> <span class="c1">// abstract field, cannot init
+</span></code></pre></div></div>
+
+<h3 id="19-type-parameterization">19. Type Parameterization</h3>
+
+<h3 id="20-abstract-members">20. Abstract Members</h3>
+
+<h4 id="205-initializing-abstract-vals">20.5 Initializing Abstract Vals</h4>
+<ul>
+  <li>class paramter: evaluated before passed to class constructor.</li>
+  <li>abstract fields: evaluated only after the superclass has been initalized.</li>
+</ul>
+
+<p>solutions:</p>
+
+<ul>
+  <li>
+    <p>Pre-initialized fields:</p>
+
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="n">n</span> <span class="k">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">x</span>
+  <span class="k">val</span> <span class="n">d</span> <span class="k">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+<span class="o">}</span> <span class="k">with</span> <span class="nc">RationalTrait</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Lazy vals:</p>
+
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">lazy</span> <span class="k">val</span> <span class="n">g</span> <span class="k">=</span> <span class="o">{</span>
+  <span class="n">require</span><span class="o">(</span><span class="n">d</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span>
+  <span class="c1">// ....
+</span><span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h4 id="206-abstract-types">20.6 Abstract Types</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Food</span>
+<span class="k">abstract</span> <span class="k">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+  <span class="k">type</span> <span class="kt">SuitableFood</span> <span class="k">&lt;:</span> <span class="kt">Food</span>
+  <span class="k">def</span> <span class="n">eat</span><span class="o">(</span><span class="n">food</span><span class="k">:</span> <span class="kt">SuitableFood</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="208-refinement-types">20.8 Refinement Types</h4>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Pasture</span> <span class="o">{</span>
+  <span class="k">var</span> <span class="n">animals</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Animal</span> <span class="o">{</span><span class="k">type</span> <span class="kt">SuitableFood</span> <span class="kt">=</span> <span class="kt">Grass</span><span class="o">}]</span> <span class="k">=</span> <span class="nc">Nil</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="21-implicit-conversions-and-parameters">21. Implicit Conversions and Parameters</h3>
+
+<h4 id="212-rules-for-implicits">21.2 Rules for Implicits</h4>
+<ol>
+  <li>Only definitions marked <code class="highlighter-rouge">implict</code> are available.</li>
+  <li>An inserted implict cnversion must be in scope as a single identifier, or be associated with the source or target type of the conversion.</li>
+</ol>
+
+<p>One-at-a-time rule: Only one implicit is inserted.</p>
+
+<p>usage:</p>
+
+<ul>
+  <li>conversions to an expected type</li>
+  <li>conversions of the receiver of a selection</li>
+  <li>implicit parameters (provide information, useful for generic functions)</li>
+</ul>
+
+<h4 id="215-implicit-parameters">21.5 Implicit Parameters</h4>
+<p>compiler replace <code class="highlighter-rouge">someCall(a)</code> with <code class="highlighter-rouge">someCall(a)(b)</code>, or <code class="highlighter-rouge">new SomeClass(a)</code> with <code class="highlighter-rouge">new SomeClass(a)(b)</code>.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">maxListImpParm</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">elements</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span>
+      <span class="o">(</span><span class="k">implicit</span> <span class="n">ordering</span><span class="k">:</span> <span class="kt">Ordering</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=</span> <span class="o">{}</span>
+</code></pre></div></div>
+
+<h4 id="217-when-multiple-conversions-apply">21.7 When Multiple Conversions Apply</h4>
+<p>If one of the available conversions is strictly more specifi than the others, then the compiler will choose the more specific one.</p>
+
+<p>one implicit conversion is more specific than another if one of the following applies applies:</p>
+
+<ul>
+  <li>subtype.</li>
+  <li>Both conversions are methods, and the enclosing class of the former extends the enclosing class of the latter.</li>
+</ul>
+
+<p>Think twice and use implicits.</p>
+
+<h3 id="22-implementing-lists">22. Implementing Lists</h3>
+<p>ListBuffer track the pointer of tail of List.</p>
+
+<h3 id="23-for-expressions-revisited">23. For Expressions Revisited</h3>
+<p>all <code class="highlighter-rouge">for</code> expressions that yield a result ==&gt; combinations of <code class="highlighter-rouge">map</code>, <code class="highlighter-rouge">flatMap</code>, and <code class="highlighter-rouge">withFilter</code>.</p>
+
+<p>all <code class="highlighter-rouge">for</code> expressions without yield ==&gt; <code class="highlighter-rouge">foreach</code> and <code class="highlighter-rouge">withFilter</code></p>
+
+<h4 id="231-for-expressions">23.1 For Expressions</h4>
+<p><code class="highlighter-rouge">for (seq) yield expr</code>
+and
+<code class="highlighter-rouge">for (seq) body</code></p>
+
+<h3 id="24-collections-in-depth">24. Collections in Depth</h3>
+
+<h4 id="243-trait-traversable">24.3 Trait Traversable</h4>
+<p><code class="highlighter-rouge">foreach</code> is the basis of the implementation of all operations in Traversable, so its performance matters.</p>
+
+<h4 id="244-trait-iterable">24.4 Trait Iterable</h4>
+
+<h4 id="245-the-sequence-traits-seq-indexedseq-and-linearseq">24.5 The Sequence Traits Seq, IndexedSeq, and LinearSeq</h4>
+<p><code class="highlighter-rouge">update</code>: mutable sequences
+<code class="highlighter-rouge">updated</code>: always return a new sequence.</p>
+
+<h4 id="2413-equality">24.13 Equality</h4>
+<p>Collections in different categories are always unequal.</p>
+
+<p>Collections with the same category are equal if and only if they have the same elements.</p>
+
+<h4 id="2414-views">24.14 Views</h4>
+<p>A view is a special kind of collection that represents some base collection, but implements all of its transformers lazily.</p>
+
+<p>reason to use:</p>
+
+<ul>
+  <li>performace: get rid of intermediate data strucure.</li>
+  <li>hope to update some mutable sequences.</li>
+</ul>
+
+<h3 id="25-the-architecture-of-scala-collections">25. The Architecture of Scala Collections</h3>
+<p>same-result-type</p>
+
+<h3 id="26-extractors">26. Extractors</h3>
+<p><code class="highlighter-rouge">apply</code> and <code class="highlighter-rouge">unapply</code></p>
+
+<h3 id="27-annotations">27. Annotations</h3>
+
+<h4 id="271-why-have-annotations">27.1 Why have Annotations?</h4>
+<ul>
+  <li>Automatic generation of documentation as with Scaladoc.</li>
+  <li>Pretty printing code so that it matches your preferred style.</li>
+  <li>Checking code for common errors.</li>
+  <li>Experimental type checking.</li>
+</ul>
+
+<h3 id="28-working-with-xml">28. Working with XML</h3>
+
+<h3 id="29-modular-programming-using-objects">29. Modular Programming Using Objects</h3>
+
+<h3 id="30-object-equality">30. Object Equality</h3>
+
+<h3 id="31-combining-scala-and-java">31. Combining Scala and Java</h3>
+
+<h3 id="32-futures-and-concurrency">32. Futures and Concurrency</h3>
+
+<h3 id="33-combinator-parsing">33. Combinator Parsing</h3>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        21 JAN 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#misc">misc</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-01/spark-kyro" class="post-title" title="Spark 2.0.2, double[], 使用Kyro序列化加速，和手动注册类名">Spark 2.0.2, double[], 使用Kyro序列化加速，和手动注册类名</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>update: 2017-01-21</p>
+
+<p>根据官方调优指南<a href="http://spark.apache.org/docs/latest/tuning.html#data-serialization">spark - Data Serialization</a>所言，Kyro通常比原生的Java默认实现快10倍，所以建议使用Kyro来加速。</p>
+
+<h3 id="0-开启kyro">0. 开启Kyro</h3>
+
+<p>开启的方法很简单，就是设参数<code class="highlighter-rouge">spark.serializer</code>。有三种方式指定：</p>
+
+<ul>
+  <li>
+    <p>程序内：</p>
+
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">conf</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">SparkConf</span><span class="o">()</span>
+<span class="n">conf</span><span class="o">.</span><span class="n">set</span><span class="o">(</span><span class="s">"spark.serializer"</span><span class="o">,</span> <span class="s">"org.apache.spark.serializer.KryoSerializer"</span><span class="o">)</span>
+
+<span class="k">val</span> <span class="n">spark</span> <span class="k">=</span> <span class="nc">SparkSession</span>
+  <span class="o">.</span><span class="n">builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="n">config</span><span class="o">(</span><span class="n">conf</span><span class="o">)</span>
+  <span class="o">.</span><span class="n">getOrCreate</span><span class="o">()</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>spark-submit参数：</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spark-submit <span class="nt">--conf</span> spark.serializer<span class="o">=</span>org.apache.spark.serializer.KryoSerializer
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>全局默认配置：conf/spark-defaults.conf:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spark.serializer   org.apache.spark.serializer.KryoSerializer
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="1-注册类名">1. 注册类名</h3>
+
+<h4 id="10-为什么要注册类名">1.0 为什么要注册类名？</h4>
+
+<p>Kyro默认序列化实例时在前面会写上类名，比如<code class="highlighter-rouge">java.lang.Double</code>，类名越长，额外的存储开销越大。为了解决这个问题，Kyro允许将类名注册进映射表里，通过分配数字ID来替换冗长的类名，比如<code class="highlighter-rouge">java.lang.Double</code>使用数字0来代替。这种方式节省了储存空间，但代价是我们必须手动将所有性能相关的类名注册。</p>
+
+<p>spark使用<a href="https://github.com/twitter/chill">Twitter chill</a>注册了常用的Scala类，也对自己的常用类都进行了注册，具体见<a href="https://github.com/apache/spark/blob/v1.4.0/core/src/main/scala/org/apache/spark/serializer/KryoSerializer.scala">KryoSerializer.scala</a>。但很遗憾，在实际使用中，仍然有大量的类名未包含其中，必须手动注册。</p>
+
+<h4 id="11-怎么查找到没有注册的类名">1.1 怎么查找到没有注册的类名？</h4>
+
+<p>最靠谱的办法是开启<code class="highlighter-rouge">spark.kryo.registrationRequired=true</code>，于是Kyro遇到没有注册的类名时就会抛异常告警。于是，一遍遍反复排查直到完全跑通，纯体力活。</p>
+
+<h4 id="12-如何注册私有类">1.2 如何注册私有类？</h4>
+
+<ul>
+  <li>
+    <p>程序内部时，spark指南中使用<code class="highlighter-rouge">classOf</code>方法来找类名，</p>
+
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">conf</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">SparkConf</span><span class="o">().</span><span class="n">setMaster</span><span class="o">(...).</span><span class="n">setAppName</span><span class="o">(...)</span>
+<span class="n">conf</span><span class="o">.</span><span class="n">registerKryoClasses</span><span class="o">(</span><span class="nc">Array</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">MyClass1</span><span class="o">],</span> <span class="n">classOf</span><span class="o">[</span><span class="kt">MyClass2</span><span class="o">]))</span>
+</code></pre></div>    </div>
+
+    <p>它的问题是，你没法导入其他包的私有类。解决方法是使用<code class="highlighter-rouge">Class.forName</code>，如:</p>
+
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">conf</span><span class="o">.</span><span class="n">registerKryoClasses</span><span class="o">(</span><span class="nc">Array</span><span class="o">(</span><span class="nc">Class</span><span class="o">.</span><span class="n">forName</span><span class="o">(</span><span class="s">"org.apache.spark.SomePrivateClass"</span><span class="o">)))</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>spark-submit / spark-defaults.conf</p>
+
+    <p>因为<a href="https://github.com/apache/spark/blob/v1.4.0/core/src/main/scala/org/apache/spark/serializer/KryoSerializer.scala#L107">KyroSerializer</a>也是使用<code class="highlighter-rouge">Class.forName</code>来解析<code class="highlighter-rouge">spark.kryo.classesToRegister</code>字段，所以直接指定类名即可。</p>
+  </li>
+</ul>
+
+<h4 id="13-如何注册java原生类型和数组">1.3 如何注册Java原生类型和数组？</h4>
+
+<p>理论上，Kyro已经对原生类型进行了注册，见<a href="https://github.com/puniverse/quasar/blob/master/quasar-core/src/main/java/co/paralleluniverse/io/serialization/kryo/KryoUtil.java#L42">KyroUtil</a>。但奇怪的是，spark仍然会要求手动注册。</p>
+
+<p>同样的解决方法，使用<code class="highlighter-rouge">Class.forName</code>来获取，具体的书写规则见<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#getName--">Class.getName()</a>。</p>
+
+<p>举点例子：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Element Type</th>
+      <th>Encoding</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">double[]</code></td>
+      <td><code class="highlighter-rouge">"[B"</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">double[][]</code></td>
+      <td><code class="highlighter-rouge">"[[B"</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">Object()</code></td>
+      <td><code class="highlighter-rouge">"java.lang.Object"</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">new Object[3]</code></td>
+      <td><code class="highlighter-rouge">"[Ljava.lang.Object;"</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="2-范例">2. 范例</h3>
+
+<p>最后，贴份对spark-ml中逻辑回归和XGBoost的手动注册类名，己经囊括了所有用法，</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">## serial</span>
+<span class="c">#spark.serializer                 org.apache.spark.serializer.KryoSerializer</span>
+<span class="c">#spark.kryo.registrationRequired  true</span>
+spark.kryo.classesToRegister      org.apache.spark.mllib.stat.MultivariateOnlineSummarizer,[D,[I,[F,org.apache.spark.ml.classification.MultiClassSummarizer,org.apache.spark.ml.classification.LogisticAggregator,ml.dmlc.xgboost4j.scala.Booster,ml.dmlc.xgboost4j.java.Booster,[Lml.dmlc.xgboost4j.scala.Booster<span class="p">;</span>,org.apache.spark.ml.feature.LabeledPoint,org.apache.spark.ml.linalg.SparseVector,org.apache.spark.mllib.evaluation.binary.BinaryLabelCounter,scala.reflect.ClassTag<span class="nv">$$</span>anon<span class="nv">$1</span>,java.lang.Class,[Lorg.apache.spark.mllib.evaluation.binary.BinaryLabelCounter<span class="p">;</span>,scala.collection.mutable.WrappedArray<span class="nv">$ofRef</span>,[Ljava.lang.String<span class="p">;</span>,[Lorg.apache.spark.sql.execution.datasources.HadoopFsRelation<span class="nv">$FakeFileStatus</span><span class="p">;</span>,org.apache.spark.sql.execution.datasources.HadoopFsRelation<span class="nv">$FakeFileStatus</span>,[Lorg.apache.spark.sql.execution.datasources.HadoopFsRelation<span class="nv">$FakeBlockLocation</span><span class="p">;</span>,org.apache.spark.sql.execution.datasources.HadoopFsRelation<span class="nv">$FakeBlockLocation</span>,org.apache.spark.sql.execution.columnar.CachedBatch,org.apache.spark.ml.feature.Instance,[[B,org.apache.spark.sql.catalyst.expressions.GenericInternalRow,[Ljava.lang.Object<span class="p">;</span>
+</code></pre></div></div>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        16 JAN 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#misc">misc</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-01/hive-basic-usage" class="post-title" title="Hive示例整理">Hive示例整理</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>update: 2017-01-16</p>
+
+<p>by: 金凌，发才</p>
+
+<h3 id="常用操作">常用操作</h3>
+<ol>
+  <li>
+    <p>查看表的属性</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">show</span> <span class="n">tblproperties</span> <span class="n">yourTableName</span><span class="p">;</span>
+<span class="k">show</span> <span class="n">partitions</span> <span class="n">tableName</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>建表</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">push_result_get_push_uid_tmp</span>
+<span class="p">(</span><span class="n">is_default</span>     <span class="n">string</span><span class="p">,</span>
+<span class="n">mid</span>             <span class="n">string</span><span class="p">,</span>
+<span class="n">push_feed_uid</span>   <span class="n">string</span><span class="p">)</span>
+<span class="n">PARTITIONED</span> <span class="k">BY</span> <span class="p">(</span><span class="n">dt</span> <span class="n">STRING</span><span class="p">)</span>
+<span class="k">ROW</span> <span class="n">FORMAT</span> <span class="n">DELIMITED</span> <span class="n">FIELDS</span> <span class="n">TERMINATED</span> <span class="k">BY</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span>
+<span class="n">STORED</span> <span class="k">AS</span> <span class="n">INPUTFORMAT</span> <span class="s1">'org.apache.hadoop.mapred.TextInputFormat'</span>
+<span class="n">OUTPUTFORMAT</span> <span class="s1">'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'</span>
+<span class="k">LOCATION</span> <span class="s1">'/dw/obja/push_stat/push_result_get_push_uid_tmp'</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>插表</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">insert</span> <span class="n">overwrite</span> <span class="k">table</span> <span class="n">tmp_uid</span> <span class="n">partition</span> <span class="p">(</span><span class="n">dt</span><span class="o">=</span><span class="mi">20160515</span><span class="p">)</span>
+<span class="k">select</span> <span class="n">a</span><span class="p">.</span><span class="n">push_uid</span> <span class="k">from</span>
+<span class="p">(</span><span class="k">select</span> <span class="k">distinct</span> <span class="n">push_uid</span> <span class="k">from</span> <span class="n">push_result_get_push_uid</span> <span class="k">where</span> <span class="n">dt</span><span class="o">=</span><span class="mi">20160515</span> <span class="k">and</span> <span class="k">length</span><span class="p">(</span><span class="n">push_uid</span><span class="p">)</span><span class="o">&lt;=</span><span class="mi">10</span><span class="p">)</span><span class="n">a</span>
+<span class="k">left</span> <span class="k">outer</span> <span class="k">join</span>
+<span class="p">(</span><span class="k">select</span> <span class="k">distinct</span> <span class="n">push_uid</span> <span class="k">from</span> <span class="n">push_result_get_push_uid</span> <span class="k">where</span> <span class="n">dt</span><span class="o">=</span><span class="mi">20160418</span> <span class="k">and</span> <span class="k">length</span><span class="p">(</span><span class="n">push_uid</span><span class="p">)</span><span class="o">&lt;=</span><span class="mi">10</span><span class="p">)</span><span class="n">b</span>
+<span class="k">on</span> <span class="n">a</span><span class="p">.</span><span class="n">push_uid</span><span class="o">=</span><span class="n">b</span><span class="p">.</span><span class="n">push_uid</span>
+<span class="k">where</span> <span class="n">b</span><span class="p">.</span><span class="n">push_uid</span> <span class="k">is</span> <span class="k">null</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>增加栏</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">test1</span> <span class="k">ADD</span> <span class="n">COLUMNS</span> <span class="p">(</span><span class="n">access_count1</span> <span class="n">int</span><span class="p">,</span><span class="n">access_count2</span> <span class="n">date</span><span class="p">,</span><span class="n">access_count3</span> <span class="n">string</span><span class="p">,</span> <span class="p">...);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>修复表</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">msck</span> <span class="n">repair</span> <span class="k">table</span> <span class="n">push_data</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><a href="https://cwiki.apache.org/confluence/display/Hive/DynamicPartitions">创建多级目录</a>（动态分区）</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">INSERT</span> <span class="n">OVERWRITE</span> <span class="k">TABLE</span> <span class="n">T</span> <span class="n">PARTITION</span> <span class="p">(</span><span class="n">ds</span><span class="o">=</span><span class="s1">'2010-03-03'</span><span class="p">,</span> <span class="n">hr</span><span class="p">)</span>
+<span class="k">SELECT</span> <span class="k">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">hr</span> <span class="k">FROM</span> <span class="n">srcpart</span> <span class="k">WHERE</span> <span class="n">ds</span> <span class="k">is</span> <span class="k">not</span> <span class="k">null</span> <span class="k">and</span> <span class="n">hr</span><span class="o">&gt;</span><span class="mi">10</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="基本设置">基本设置</h3>
+
+<ol>
+  <li>
+    <p>设置队列</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">set</span> <span class="n">mapreduce</span><span class="p">.</span><span class="n">job</span><span class="p">.</span><span class="n">queuename</span><span class="o">=</span><span class="n">normal_production</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>设置内存</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">set</span> <span class="n">mapreduce</span><span class="p">.</span><span class="k">map</span><span class="p">.</span><span class="n">memory</span><span class="p">.</span><span class="n">mb</span><span class="o">=</span><span class="mi">5120</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">mapreduce</span><span class="p">.</span><span class="k">map</span><span class="p">.</span><span class="n">java</span><span class="p">.</span><span class="n">opts</span><span class="o">=-</span><span class="n">Xmx4608m</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">mapreduce</span><span class="p">.</span><span class="n">reduce</span><span class="p">.</span><span class="n">memory</span><span class="p">.</span><span class="n">mb</span><span class="o">=</span><span class="mi">5120</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">mapreduce</span><span class="p">.</span><span class="n">reduce</span><span class="p">.</span><span class="n">java</span><span class="p">.</span><span class="n">opts</span><span class="o">=-</span><span class="n">Xmx4608m</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">mapred</span><span class="p">.</span><span class="n">child</span><span class="p">.</span><span class="n">java</span><span class="p">.</span><span class="n">opts</span><span class="o">=-</span><span class="n">Xmx2048m</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">mapred</span><span class="p">.</span><span class="n">reduce</span><span class="p">.</span><span class="n">tasks</span><span class="o">=</span><span class="mi">50</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">mapred</span><span class="p">.</span><span class="k">max</span><span class="p">.</span><span class="n">split</span><span class="p">.</span><span class="k">size</span><span class="o">=</span><span class="mi">600000000</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">mapred</span><span class="p">.</span><span class="k">min</span><span class="p">.</span><span class="n">split</span><span class="p">.</span><span class="k">size</span><span class="p">.</span><span class="n">per</span><span class="p">.</span><span class="n">node</span><span class="o">=</span><span class="mi">600000000</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">mapred</span><span class="p">.</span><span class="k">min</span><span class="p">.</span><span class="n">split</span><span class="p">.</span><span class="k">size</span><span class="p">.</span><span class="n">per</span><span class="p">.</span><span class="n">rack</span><span class="o">=</span><span class="mi">600000000</span><span class="p">;</span>
+</code></pre></div>    </div>
+    <p><a href="https://documentation.altiscale.com/heapsize-for-mappers-and-reducers">惯例</a>: <code class="highlighter-rouge">mapreduce.{map|reduce}.java.opts = mapreduce.{map|reduce}.memory.mb x 0.9</code></p>
+
+    <p><img src="https://documentation.altiscale.com/userfiles/1651/2522/ckfinder/images/MR_Mem_Alloc%20-%20java_opts%20vs%20mr.png?dc=201508172029-0" alt="内存分配图" /></p>
+  </li>
+  <li>
+    <p><a href="https://cwiki.apache.org/confluence/display/Hive/CompressedStorage">压缩结果数据</a></p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SET</span> <span class="n">hive</span><span class="p">.</span><span class="k">exec</span><span class="p">.</span><span class="n">compress</span><span class="p">.</span><span class="k">output</span><span class="o">=</span><span class="k">true</span><span class="p">;</span>
+<span class="c1">-- SET mapred.output.compression.codec=org.apache.hadoop.io.compress.SnappyCodec;</span>
+<span class="c1">-- SET mapred.output.compression.type=BLOCK;</span>
+<span class="c1">-- SET io.seqfile.compression.type=BLOCK;</span>
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>mapred.output.compression.type: I use block. This will make the compression slittable even for all compression formats (gzip, snappy, and bzip2) just make sure your using a splitable file format like sequence, RCFile, or Avro.</p>
+    </blockquote>
+
+    <p><a href="http://comphadoop.weebly.com/">Common input format</a>
+Compression format | Tool | Algorithm | File extention | Splittable
+–|–|–|–|–
+gzip | gzip | DEFLATE | .gz | No
+bzip2 | bizp2 | bzip2 | .bz2 | Yes
+LZO | lzop | LZO | .lzo | Yes if indexed
+Snappy | N/A | Snappy | .snappy | No</p>
+
+    <p>ref: <a href="http://www.cloudera.com/documentation/archive/cdh/4-x/4-3-0/CDH4-Installation-Guide/cdh4ig_topic_23_5.html">Using Snappy for Hive Compression</a></p>
+  </li>
+  <li>
+    <p>合并结果中的小文件</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">set</span> <span class="n">hive</span><span class="p">.</span><span class="n">merge</span><span class="p">.</span><span class="n">mapfiles</span><span class="o">=</span><span class="k">true</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">hive</span><span class="p">.</span><span class="n">merge</span><span class="p">.</span><span class="n">mapredfiles</span><span class="o">=</span><span class="k">true</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">hive</span><span class="p">.</span><span class="n">merge</span><span class="p">.</span><span class="k">size</span><span class="p">.</span><span class="n">per</span><span class="p">.</span><span class="n">task</span><span class="o">=</span><span class="mi">256000000</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">hive</span><span class="p">.</span><span class="n">merge</span><span class="p">.</span><span class="n">smallfiles</span><span class="p">.</span><span class="n">avgsize</span><span class="o">=</span><span class="mi">256000000</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>自定义UDF</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">add</span> <span class="n">jar</span> <span class="n">hive_udf</span><span class="p">.</span><span class="n">jar</span><span class="p">;</span>
+<span class="k">create</span> <span class="k">temporary</span> <span class="k">function</span> <span class="n">getJsonArray</span> <span class="k">as</span> <span class="s1">'com.weibo.hive.udtf.json.UDFGenerateJsonArray'</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        29 NOV 2016
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#tech">tech</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2016-11/machine_learn_lda" class="post-title" title="机器学习：LDA算法">机器学习：LDA算法</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>update: 2016-11-29</p>
+
+<p>LDA是我们部们用得比较广泛的主题模型，最常见的用途是找到相似文本用于推荐。这个算法的使用和工程实现都比较简单，但背后的数学原理繁复，所以想下点功夫弄清楚。思路是以做带学，在梳理代码实现的同时，再查阅文献弄清后面的数学公式。</p>
+
+<h3 id="0-原理简介">0. 原理简介</h3>
+
+<p>参考：</p>
+
+<ul>
+  <li><a href="http://blog.csdn.net/v_july_v/article/details/41209515?utm_source=tuicool">通俗理解LDA主题模型</a></li>
+  <li>LDA数学八卦，靳志辉</li>
+  <li>Parameter estimation for text analysis, Gregor Heinrich.</li>
+</ul>
+
+<h3 id="1-工程实现">1. 工程实现</h3>
+
+<h4 id="10-spark">1.0 spark</h4>
+
+<ul>
+  <li>
+    <p>框架UML</p>
+  </li>
+  <li>
+    <p>模块细节</p>
+  </li>
+</ul>
+
+<h4 id="11-sklearn">1.1 sklearn</h4>
+
+<h4 id="12-jbibblda">1.2 jbibblda</h4>
+
+<h3 id="结语">结语</h3>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        12 AUG 2016
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#tech">tech</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2016-08/machine_learn_tree" class="post-title" title="机器学习：树相关算法">机器学习：树相关算法</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>update: 2017-03-15</p>
+
+<ul>
+  <li>2017-03-11，新浪微博算法平台，大部门分享：<a href="/assets/ml_tree/GBDT_TreeBoost_XGBoost_facaiy.pdf">GBDT、TreeBoost 和 XGBoost：树模型的进化之路 - 颜发才</a></li>
+</ul>
+
+<h3 id="缘起">缘起</h3>
+<p>看了不少机器学习的书籍，却始终是略懂皮毛的程度。最近项目训练GBDT模型，更是深切地认识到「学以致用」的必要性。故打算由浅入深地重新学习树相关的方法，大致思路是：首先实现 demo 阐明原理，再阅读常用的工程实现，最后阅读论文打通数学推导。</p>
+
+<p>本文用于整理记录学习笔记。因为是初学者，肯定纰漏错识之处甚多，敬请审阅。</p>
+
+<h3 id="0-决策树">0 决策树</h3>
+
+<h4 id="00-demo">0.0 Demo</h4>
+<ul>
+  <li><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/machine_learning/tree/decision_tree/demo.ipynb">决策树简介和 Python 实现</a></li>
+</ul>
+
+<h4 id="01-sklearn-实现">0.1 sklearn 实现</h4>
+<p>总纲：</p>
+
+<ul>
+  <li><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/machine_learning/tree/decision_tree/sklearn/intro.ipynb">决策树在 sklearn 中的实现简介</a></li>
+</ul>
+
+<p>细节：</p>
+
+<ul>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/machine_learning/tree/decision_tree/sklearn/_criterion.ipynb">评价函数模块 _criterion.* 详解</a></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/machine_learning/tree/decision_tree/sklearn/_splitter.ipynb">分割函数模块 _splitter.* 详解</a></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/machine_learning/tree/decision_tree/sklearn/_tree.ipynb">树构建模块 _tree.* 详解</a></p>
+  </li>
+</ul>
+
+<h4 id="02-spark-实现">0.2 spark 实现</h4>
+
+<h3 id="1-随机森林">1 随机森林</h3>
+
+<ul>
+  <li><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/machine_learning/tree/random_forest/intro.ipynb">随机森林简介</a></li>
+</ul>
+
+<h3 id="2-gbdtgradient-boosting-decision-tree">2 GBDT(Gradient Boosting Decision Tree)</h3>
+
+<h4 id="原理">原理</h4>
+
+<ul>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/machine_learning/tree/gbdt/intro.ipynb">GBDT(Gradient Boosting Decision Tree) 原理简介</a></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/machine_learning/tree/gbdt/treeboost/intro.ipynb">TreeBoost简介</a></p>
+  </li>
+</ul>
+
+<h4 id="实现">实现</h4>
+<ul>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/machine_learning/tree/gbdt/spark/intro.ipynb">GBDT 在 spark 中的实现简介</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.evernote.com/l/ADDTp7Nc6iRFmJRUDola9Jpa9v1J1BAsNeg">Spark ML: Tree架构笔记</a></p>
+  </li>
+</ul>
+
+<h3 id="3-xgboost">3 xgboost</h3>
+
+<ul>
+  <li><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/machine_learning/tree/gbdt/xgboost/intro.ipynb">xgboost的基本原理与实现简介</a></li>
+</ul>
+
+<h3 id="结语">结语</h3>
+
+<p>耗时近三个月，比预计的时间长。树相关的概念比较简单，但确实有些实现细节较为繁琐。回顾前面的文章，还是有问题的，有些是笔误，有些是当时的理解片面。后续打算整理一份详细的文档，汇总上述文章并修正错点。</p>
+
+<p>总之，树的专题可以暂时告一段落了，收获挺多。</p>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        21 MAR 2016
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#tech">tech</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2016-03/the_elements_of_statistical_learning" class="post-title" title="笔记：The Elements of Statistical Learning">笔记：The Elements of Statistical Learning</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>先看了简化版<a href="http://www-bcf.usc.edu/~gareth/ISL/index.html"> An Introduction to Statistical Learning with Applications in R</a>，内容通俗易懂。然后想再挑战下进阶版<a href="http://statweb.stanford.edu/~tibs/ElemStatLearn/">The Elements of Statistical Learning (corrected 10th printing)</a>，发现数理部份相当难，比如矩阵求导和条件期望，我是非常生疏。</p>
+
+<p>不知道能否看完此书，又需要多长时间。目前想法是做笔记（基本要点），课后习题尽量解，能力有限，肯定错不会少，还请指正。书中部份公式有尝试证明，整理过于耗时，只好先行搁置。</p>
+
+<h3 id="目录"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/tree/master/The_Elements_of_Statistical_Learning/">目录</a></h3>
+
+<h4 id="1-introduction-1"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/The_Elements_of_Statistical_Learning/Introduction/note.ipynb">1 Introduction 1</a></h4>
+
+<h4 id="2-overview-of-supervised-learning-9"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/The_Elements_of_Statistical_Learning/Overview_of_Supervised_Learning/note.ipynb">2 Overview of Supervised Learning 9</a></h4>
+<p><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/The_Elements_of_Statistical_Learning/Overview_of_Supervised_Learning/exercises.ipynb">课后题</a></p>
+
+<h4 id="3-linear-methods-for-regression-43">3 Linear Methods for Regression 43</h4>
+
+<h4 id="4-linear-methods-for-classification-101">4 Linear Methods for Classification 101</h4>
+
+<h4 id="5-basis-expansions-and-regularization-139">5 Basis Expansions and Regularization 139</h4>
+
+<h4 id="6-kernel-smoothing-methods-191">6 Kernel Smoothing Methods 191</h4>
+
+<h4 id="7-model-assessment-and-selection-219">7 Model Assessment and Selection 219</h4>
+
+<h4 id="8-model-inference-and-averaging-261">8 Model Inference and Averaging 261</h4>
+
+<h4 id="9-additive-models-trees-and-related-methods-295">9 Additive Models, Trees, and Related Methods 295</h4>
+
+<h4 id="10-boosting-and-additive-trees-337">10 Boosting and Additive Trees 337</h4>
+
+<h4 id="11-neural-networks-389">11 Neural Networks 389</h4>
+
+<h4 id="12-support-vector-machines-and-flexible-discriminants-417">12 Support Vector Machines and Flexible Discriminants 417</h4>
+
+<h4 id="13-prototype-methods-and-nearest-neighbors-459">13 Prototype Methods and Nearest-Neighbors 459</h4>
+
+<h4 id="14-unsupervised-learning-485">14 Unsupervised Learning 485</h4>
+
+<h4 id="15-random-forests-587">15 Random Forests 587</h4>
+
+<h4 id="16-ensemble-learning-605">16 Ensemble Learning 605</h4>
+
+<h4 id="17-undirected-graphical-models-625">17 Undirected Graphical Models 625</h4>
+
+<h4 id="18-high-dimensional-problems-p--n-649">18 High-Dimensional Problems: p ≫ N 649</h4>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        27 OCT 2015
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#tech">tech</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2015-10/introduction-to-algorithms" class="post-title" title="笔记：Introduction to Algorithms, Third Edition">笔记：Introduction to Algorithms, Third Edition</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p><a href="https://mitpress.mit.edu/books/introduction-algorithms">Introduction to Algorithms, Third Edition</a>
+By Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein</p>
+
+<h3 id="table-of-contents">Table of Contents</h3>
+
+<h4 id="i-foundations">I Foundations</h4>
+
+<h5 id="1-the-role-of-algorithms-in-computing-5">1 The Role of Algorithms in Computing 5</h5>
+
+<h5 id="2-getting-started-16">2 Getting Started 16</h5>
+
+<h5 id="3-growth-of-functions-43">3 Growth of Functions 43</h5>
+
+<h5 id="4-divide-and-conquer-65">4 Divide-and-Conquer 65</h5>
+
+<h5 id="5-probabilistic-analysis-and-randomized-algorithms-114">5 Probabilistic Analysis and Randomized Algorithms 114</h5>
+
+<h4 id="ii-sorting-and-order-statistics">II Sorting and Order Statistics</h4>
+
+<h5 id="6-heapsort-151">6 Heapsort 151</h5>
+
+<h5 id="7-quicksort-170">7 Quicksort 170</h5>
+
+<h5 id="8-sorting-in-linear-time-191">8 Sorting in Linear Time 191</h5>
+
+<h5 id="9-medians-and-order-statistics-213">9 Medians and Order Statistics 213</h5>
+
+<h4 id="iii-data-structures">III Data Structures</h4>
+
+<h5 id="10-elementary-data-structures-232">10 Elementary Data Structures 232</h5>
+
+<h5 id="11-hash-tables-253">11 Hash Tables 253</h5>
+
+<h5 id="12-binary-search-trees-286">12 Binary Search Trees 286</h5>
+
+<h5 id="13-red-black-trees-308">13 Red-Black Trees 308</h5>
+
+<h5 id="14-augmenting-data-structures-339">14 Augmenting Data Structures 339</h5>
+
+<h4 id="iv-advanced-design-and-analysis-techniques">IV Advanced Design and Analysis Techniques</h4>
+
+<h5 id="15-dynamic-programming-359"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/15_Dynamic_Programming/note.ipynb">15 Dynamic Programming 359</a></h5>
+
+<h5 id="16-greedy-algorithms-414"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/16_Greedy_Algorithms/note.ipynb">16 Greedy Algorithms 414</a></h5>
+
+<h5 id="17-amortized-analysis-451"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/17_Amortized_Analysis/note.ipynb">17 Amortized Analysis 451</a></h5>
+
+<h4 id="v-advanced-data-structures">V Advanced Data Structures</h4>
+
+<h5 id="18-b-trees-484"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/18_B_Trees/note.ipynb">18 B-Trees 484</a></h5>
+
+<h5 id="19-fibonacci-heaps-505"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/19_Fibonacci_Heap/note.ipynb">19 Fibonacci Heaps 505</a></h5>
+
+<h5 id="20-van-emde-boas-trees-531"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/20_van_Emde_Boas_Trees/note.ipynb">20 van Emde Boas Trees 531</a></h5>
+
+<h5 id="21-data-structures-for-disjoint-sets-561"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/21_Data_Structures_for_Disjoint_Sets/note.ipynb">21 Data Structures for Disjoint Sets 561</a></h5>
+
+<h4 id="vi-graph-algorithms">VI Graph Algorithms</h4>
+
+<h5 id="22-elementary-graph-algorithms-589"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/22_Elementary_Graph_Algorithms/note.ipynb">22 Elementary Graph Algorithms 589</a></h5>
+
+<h5 id="23-minimum-spanning-trees-624"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/23_Minimum_Spanning_Trees/note.ipynb">23 Minimum Spanning Trees 624</a></h5>
+
+<h5 id="24-single-source-shortest-paths-643"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/24_Single-Source_Shortest_Paths/note.ipynb">24 Single-Source Shortest Paths 643</a></h5>
+
+<h5 id="25-all-pairs-shortest-paths-684"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/25_All-Pairs_Shortest_Paths/note.ipynb">25 All-Pairs Shortest Paths 684</a></h5>
+
+<h5 id="26-maximum-flow-708"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Introduction_to_Algorithms/26_Maximum_Flow/note.ipynb">26 Maximum Flow 708</a></h5>
+
+<h4 id="vii-selected-topics">VII Selected Topics</h4>
+
+<h5 id="27-multithreaded-algorithms">27 Multithreaded Algorithms</h5>
+
+<h5 id="28-matrix-operations-813">28 Matrix Operations 813</h5>
+
+<h5 id="29-linear-programming-843">29 Linear Programming 843</h5>
+
+<h5 id="30-polynomials-and-the-fft-898">30 Polynomials and the FFT 898</h5>
+
+<h5 id="31-number-theoretic-algorithms-926">31 Number-Theoretic Algorithms 926</h5>
+
+<h5 id="32-string-matching-985">32 String Matching 985</h5>
+
+<h5 id="33-computational-geometry-1014">33 Computational Geometry 1014</h5>
+
+<h5 id="34-np-completeness-1048">34 NP-Completeness 1048</h5>
+
+<h5 id="35-approximation-algorithms-1106">35 Approximation Algorithms 1106</h5>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        9 OCT 2015
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#tech">tech</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2015-10/mining-of-massive-datasets" class="post-title" title="笔记：Mining of Massive Datasets">笔记：Mining of Massive Datasets</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>朋友推荐，于是最近在看 <a href="http://www.mmds.org/">Mining of Massive Datasets - Jure Leskovec, Anand Rajaraman, Jeff Ullman</a>，此书资源在官网可自由获取。</p>
+
+<p>第一次尝试将笔记整理成 iPython notebook 形式，效果很棒！开始打算是将练习题尽量全做完的，但发现挺费时，后面主要是笔记整理为主，感兴趣的习题会尝试去解。</p>
+
+<h3 id="目录"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/tree/master/Mining_of_Massive_Datasets/">目录</a></h3>
+
+<h4 id="1-data-mining">1 Data Mining</h4>
+
+<h4 id="2-map-reduce-and-the-new-software-stack"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/MapReduce_and_the_New_Software_Stack/note.ipynb">2 Map-Reduce and the New Software Stack</a></h4>
+
+<h4 id="3-finding-similar-items"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Finding_Similar_Items/note.ipynb">3 Finding Similar Items</a></h4>
+
+<h4 id="4-mining-data-streams"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Mining_Data_Streams/note.ipynb">4 Mining Data Streams</a></h4>
+
+<h4 id="5-link-analysis"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Link_Analysis/note.ipynb">5 Link Analysis</a></h4>
+
+<h4 id="6-frequent-itemsets"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Frequent_Itemsets/note.ipynb">6 Frequent Itemsets</a></h4>
+
+<h4 id="7-clustering"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Clustering/note.ipynb">7 Clustering</a></h4>
+
+<h4 id="8-advertising-on-the-web"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Advertising_on_the_Web/note.ipynb">8 Advertising on the Web</a></h4>
+
+<h4 id="9-recommendation-systems"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Recommendation_Systems/note.ipynb">9 Recommendation Systems</a></h4>
+
+<h4 id="10--mining-social-network-graphs"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Mining_Social_Network_Graphs/note.ipynb">10  Mining Social-Network Graphs</a></h4>
+
+<h4 id="11--dimensionality-reduction"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Dimensionality_Reduction/note.ipynb">11  Dimensionality Reduction</a></h4>
+
+<h4 id="12--large-scale-machine-learning"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Large-Scale_Machine_Learning/note.ipynb">12  Large-Scale Machine Learning</a></h4>
+
+<p>后记:  <br />
+花费6个月时间，断断续续看完，哈希和近似的想法真是开阔了眼界。第一回看比较急促，此书值得反复看，多实践。</p>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+
+        <footer>
+  &copy; 2018 吴楚. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>

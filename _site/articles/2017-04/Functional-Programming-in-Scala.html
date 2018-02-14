@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="update: 2017-06-23早上四点就自然醒了，没了睡意，就整理下最近在看的函数式编程书籍Functional Programming in Scala, 2015。同事推荐说有点烧脑，做了开头两章，确实挺好玩的。官方在Github上有个仓库，放了习题、指导和答案，很方便，见fpinscala/fpins...">
+  <meta name="keywords" content="Programming, Bio, and DS">
+  <meta name="author" content="笔记：Functional Programming in Scala | 楚园">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="笔记：Functional Programming in Scala | 楚园">
+  <meta name="twitter:description" content="update: 2017-06-23早上四点就自然醒了，没了睡意，就整理下最近在看的函数式编程书籍Functional Programming in Scala, 2015。同事推荐说有点烧脑，做了开头两章，确实挺好玩的。官方在Github上有个仓库，放了习题、指导和答案，很方便，见fpinscala/fpins...">
+  <meta name="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="http://localhost:4000">
+  <meta property="og:title" content="笔记：Functional Programming in Scala | 楚园">
+  <meta property="og:description" content="update: 2017-06-23早上四点就自然醒了，没了睡意，就整理下最近在看的函数式编程书籍Functional Programming in Scala, 2015。同事推荐说有点烧脑，做了开头两章，确实挺好玩的。官方在Github上有个仓库，放了习题、指导和答案，很方便，见fpinscala/fpins...">
+  <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
+  <title>笔记：Functional Programming in Scala | 楚园</title>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2017-04/Functional-Programming-in-Scala">
+  <link rel="alternate" type="application/rss+xml" title="楚园" href="http://localhost:4000 /feed.xml " />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">吴楚</a>
+  <span class="author_job">DS</span>
+  <span class="author_bio mbm">Bio-DS SZ.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+          
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+            
+      <li class="nav-item">
+        <a href="http://localhost:4000/resume/">Resume</a>
+        
+          <span>/</span>
+        
+      </li>
+        
+      <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+        
+      </li>
+       
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('iwuchu@126.com', 'Hello from website');</script>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    <li><a href="http://github.com/Blusea" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="笔记：Functional Programming in Scala">笔记：Functional Programming in Scala</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        23 APR 2017
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    1 min read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>update: 2017-06-23</p>
+
+<p>早上四点就自然醒了，没了睡意，就整理下最近在看的函数式编程书籍<a href="https://www.manning.com/books/functional-programming-in-scala">Functional Programming in Scala</a>, 2015。同事推荐说有点烧脑，做了开头两章，确实挺好玩的。</p>
+
+<p>官方在Github上有个仓库，放了习题、指导和答案，很方便，见<a href="https://github.com/fpinscala/fpinscala">fpinscala/fpinscala</a>。遗憾的是我没有看到习题配套的单元测试用例来校验正确性，所以自己建了个mvn工程，作业都放在<a href="https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala">facaiy/book_notes</a>。希望尽量都做一遍，耗时预计在两个月。</p>
+
+<h3 id="目录">目录</h3>
+
+<h4 id="part-1-introduction-to-functional-programming">PART 1 INTRODUCTION TO FUNCTIONAL PROGRAMMING</h4>
+
+<h5 id="1-what-is-functional-programming">1 What is functional programming?</h5>
+
+<h5 id="2-getting-started-with-functional-programming-in-scala"><a href="https://github.com/facaiy/book_notes/blob/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c2/ChapterTwo.scala">2 Getting started with functional programming in Scala</a></h5>
+
+<h5 id="3-functional-data-structures"><a href="https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c3">3 Functional data structures</a></h5>
+
+<h5 id="4-handling-errors-without-exceptions"><a href="https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c4">4 Handling errors without exceptions</a></h5>
+
+<h5 id="5-strictness-and-laziness"><a href="https://github.com/facaiy/book_notes/blob/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c5/Stream.scala">5 Strictness and laziness</a></h5>
+
+<h5 id="6-purely-functional-state"><a href="https://github.com/facaiy/book_notes/blob/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c6/State.scala">6 Purely functional state</a></h5>
+
+<h4 id="part-2-functional-design-and-combinator-libraries">PART 2 FUNCTIONAL DESIGN AND COMBINATOR LIBRARIES</h4>
+
+<h5 id="7-purely-functional-parallelism"><a href="https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c7">7 Purely functional parallelism</a></h5>
+
+<h5 id="8-property-based-testing"><a href="https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c8">8 Property-based testing</a></h5>
+
+<h5 id="9-parser-combinators"><a href="https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c9">9 Parser combinators</a></h5>
+
+<h4 id="part-3-common-structures-in-functional-design">PART 3 COMMON STRUCTURES IN FUNCTIONAL DESIGN</h4>
+
+<h5 id="10-monoids"><a href="https://github.com/facaiy/book_notes/blob/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c10/Monoid.scala">10 Monoids</a></h5>
+
+<h5 id="11-monads"><a href="https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c11">11 Monads</a></h5>
+
+<h5 id="12-applicative-and-traversable-functors"><a href="https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c12">12 Applicative and traversable functors</a></h5>
+
+<h4 id="part-4-effects-and-io">PART 4 EFFECTS AND I/O</h4>
+
+<h5 id="13-external-effects-and-io"><a href="https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c13">13 External effects and I/O</a></h5>
+
+<h5 id="14-local-effects-and-mutable-state">14 Local effects and mutable state</h5>
+
+<h5 id="15-stream-processing-and-incremental-io"><a href="https://github.com/facaiy/book_notes/blob/master/Manning_Functional_Programming_in_Scala/src/main/scala/io/github/facaiy/fp/scala/c15/Process.scala">15 Stream processing and incremental I/O</a></h5>
+
+<h3 id="后记">后记</h3>
+
+<p>学习时，对于第一至三部分，下了很多工夫，基本完成了全部习题。而最后的第四部份，相对更复杂，也不在兴趣点上，只是泛泛一览而过。</p>
+
+<p>主要收获有两点：一是熟悉了scala的诸多高级特性，如Generic, Implicit, Lambda type等等。二是了解了函数式编程的思想和方法。对函数式编程的印象中，有两点最深刻：一是它很灵活，扩展性和可组装性强大，擅长于抽出模式，很适合用于编写库；二是它很像是在写编译器，常常会用个数据结构描述计算，再用具体的辅助函数来解释执行，将描述与执行分离，可以在后级做优化，很有趣。</p>
+
+<p>在编写工作代码时，我用书中的知识技巧完成了两个库。学以致用，好生快乐！详见：</p>
+
+<ul>
+  <li><a href="https://github.com/facaiy/DAG-lite">facaiy/DAG-lite</a>: 轻量调度库。借鉴了书中懒惰求值和并行的设计。</li>
+  <li><a href="https://github.com/facaiy/math-expression-parser">facaiy/math-expression-parser</a>：数学表达式解析器。借鉴了书中Parser的处理。</li>
+</ul>
+
+<p>两个月的时间，还是挺漫长的。总算结束了，大功告成，又如释重负。</p>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2017-04/Functional-Programming-in-Scala" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2017-04/Functional-Programming-in-Scala" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2017-04/Functional-Programming-in-Scala" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2017-04/Functional-Programming-in-Scala" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2017-04/Functional-Programming-in-Scala" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2018 吴楚. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>

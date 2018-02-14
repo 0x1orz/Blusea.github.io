@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="update: 2017-01-16by: 金凌，发才常用操作      查看表的属性    show tblproperties yourTableName;show partitions tableName;            建表    CREATE EXTERNAL TABLE IF NOT EXIS...">
+  <meta name="keywords" content="Programming, Bio, and DS">
+  <meta name="author" content="Hive示例整理 | 楚园">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hive示例整理 | 楚园">
+  <meta name="twitter:description" content="update: 2017-01-16by: 金凌，发才常用操作      查看表的属性    show tblproperties yourTableName;show partitions tableName;            建表    CREATE EXTERNAL TABLE IF NOT EXIS...">
+  <meta name="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="http://localhost:4000">
+  <meta property="og:title" content="Hive示例整理 | 楚园">
+  <meta property="og:description" content="update: 2017-01-16by: 金凌，发才常用操作      查看表的属性    show tblproperties yourTableName;show partitions tableName;            建表    CREATE EXTERNAL TABLE IF NOT EXIS...">
+  <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
+  <title>Hive示例整理 | 楚园</title>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2017-01/hive-basic-usage">
+  <link rel="alternate" type="application/rss+xml" title="楚园" href="http://localhost:4000 /feed.xml " />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">吴楚</a>
+  <span class="author_job">DS</span>
+  <span class="author_bio mbm">Bio-DS SZ.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+          
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+            
+      <li class="nav-item">
+        <a href="http://localhost:4000/resume/">Resume</a>
+        
+          <span>/</span>
+        
+      </li>
+        
+      <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+        
+      </li>
+       
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('iwuchu@126.com', 'Hello from website');</script>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    <li><a href="http://github.com/Blusea" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Hive示例整理">Hive示例整理</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        16 JAN 2017
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    4 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>update: 2017-01-16</p>
+
+<p>by: 金凌，发才</p>
+
+<h3 id="常用操作">常用操作</h3>
+<ol>
+  <li>
+    <p>查看表的属性</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">show</span> <span class="n">tblproperties</span> <span class="n">yourTableName</span><span class="p">;</span>
+<span class="k">show</span> <span class="n">partitions</span> <span class="n">tableName</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>建表</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">push_result_get_push_uid_tmp</span>
+<span class="p">(</span><span class="n">is_default</span>     <span class="n">string</span><span class="p">,</span>
+<span class="n">mid</span>             <span class="n">string</span><span class="p">,</span>
+<span class="n">push_feed_uid</span>   <span class="n">string</span><span class="p">)</span>
+<span class="n">PARTITIONED</span> <span class="k">BY</span> <span class="p">(</span><span class="n">dt</span> <span class="n">STRING</span><span class="p">)</span>
+<span class="k">ROW</span> <span class="n">FORMAT</span> <span class="n">DELIMITED</span> <span class="n">FIELDS</span> <span class="n">TERMINATED</span> <span class="k">BY</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span>
+<span class="n">STORED</span> <span class="k">AS</span> <span class="n">INPUTFORMAT</span> <span class="s1">'org.apache.hadoop.mapred.TextInputFormat'</span>
+<span class="n">OUTPUTFORMAT</span> <span class="s1">'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'</span>
+<span class="k">LOCATION</span> <span class="s1">'/dw/obja/push_stat/push_result_get_push_uid_tmp'</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>插表</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">insert</span> <span class="n">overwrite</span> <span class="k">table</span> <span class="n">tmp_uid</span> <span class="n">partition</span> <span class="p">(</span><span class="n">dt</span><span class="o">=</span><span class="mi">20160515</span><span class="p">)</span>
+<span class="k">select</span> <span class="n">a</span><span class="p">.</span><span class="n">push_uid</span> <span class="k">from</span>
+<span class="p">(</span><span class="k">select</span> <span class="k">distinct</span> <span class="n">push_uid</span> <span class="k">from</span> <span class="n">push_result_get_push_uid</span> <span class="k">where</span> <span class="n">dt</span><span class="o">=</span><span class="mi">20160515</span> <span class="k">and</span> <span class="k">length</span><span class="p">(</span><span class="n">push_uid</span><span class="p">)</span><span class="o">&lt;=</span><span class="mi">10</span><span class="p">)</span><span class="n">a</span>
+<span class="k">left</span> <span class="k">outer</span> <span class="k">join</span>
+<span class="p">(</span><span class="k">select</span> <span class="k">distinct</span> <span class="n">push_uid</span> <span class="k">from</span> <span class="n">push_result_get_push_uid</span> <span class="k">where</span> <span class="n">dt</span><span class="o">=</span><span class="mi">20160418</span> <span class="k">and</span> <span class="k">length</span><span class="p">(</span><span class="n">push_uid</span><span class="p">)</span><span class="o">&lt;=</span><span class="mi">10</span><span class="p">)</span><span class="n">b</span>
+<span class="k">on</span> <span class="n">a</span><span class="p">.</span><span class="n">push_uid</span><span class="o">=</span><span class="n">b</span><span class="p">.</span><span class="n">push_uid</span>
+<span class="k">where</span> <span class="n">b</span><span class="p">.</span><span class="n">push_uid</span> <span class="k">is</span> <span class="k">null</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>增加栏</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">test1</span> <span class="k">ADD</span> <span class="n">COLUMNS</span> <span class="p">(</span><span class="n">access_count1</span> <span class="n">int</span><span class="p">,</span><span class="n">access_count2</span> <span class="n">date</span><span class="p">,</span><span class="n">access_count3</span> <span class="n">string</span><span class="p">,</span> <span class="p">...);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>修复表</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">msck</span> <span class="n">repair</span> <span class="k">table</span> <span class="n">push_data</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><a href="https://cwiki.apache.org/confluence/display/Hive/DynamicPartitions">创建多级目录</a>（动态分区）</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">INSERT</span> <span class="n">OVERWRITE</span> <span class="k">TABLE</span> <span class="n">T</span> <span class="n">PARTITION</span> <span class="p">(</span><span class="n">ds</span><span class="o">=</span><span class="s1">'2010-03-03'</span><span class="p">,</span> <span class="n">hr</span><span class="p">)</span>
+<span class="k">SELECT</span> <span class="k">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">hr</span> <span class="k">FROM</span> <span class="n">srcpart</span> <span class="k">WHERE</span> <span class="n">ds</span> <span class="k">is</span> <span class="k">not</span> <span class="k">null</span> <span class="k">and</span> <span class="n">hr</span><span class="o">&gt;</span><span class="mi">10</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="基本设置">基本设置</h3>
+
+<ol>
+  <li>
+    <p>设置队列</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">set</span> <span class="n">mapreduce</span><span class="p">.</span><span class="n">job</span><span class="p">.</span><span class="n">queuename</span><span class="o">=</span><span class="n">normal_production</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>设置内存</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">set</span> <span class="n">mapreduce</span><span class="p">.</span><span class="k">map</span><span class="p">.</span><span class="n">memory</span><span class="p">.</span><span class="n">mb</span><span class="o">=</span><span class="mi">5120</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">mapreduce</span><span class="p">.</span><span class="k">map</span><span class="p">.</span><span class="n">java</span><span class="p">.</span><span class="n">opts</span><span class="o">=-</span><span class="n">Xmx4608m</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">mapreduce</span><span class="p">.</span><span class="n">reduce</span><span class="p">.</span><span class="n">memory</span><span class="p">.</span><span class="n">mb</span><span class="o">=</span><span class="mi">5120</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">mapreduce</span><span class="p">.</span><span class="n">reduce</span><span class="p">.</span><span class="n">java</span><span class="p">.</span><span class="n">opts</span><span class="o">=-</span><span class="n">Xmx4608m</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">mapred</span><span class="p">.</span><span class="n">child</span><span class="p">.</span><span class="n">java</span><span class="p">.</span><span class="n">opts</span><span class="o">=-</span><span class="n">Xmx2048m</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">mapred</span><span class="p">.</span><span class="n">reduce</span><span class="p">.</span><span class="n">tasks</span><span class="o">=</span><span class="mi">50</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">mapred</span><span class="p">.</span><span class="k">max</span><span class="p">.</span><span class="n">split</span><span class="p">.</span><span class="k">size</span><span class="o">=</span><span class="mi">600000000</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">mapred</span><span class="p">.</span><span class="k">min</span><span class="p">.</span><span class="n">split</span><span class="p">.</span><span class="k">size</span><span class="p">.</span><span class="n">per</span><span class="p">.</span><span class="n">node</span><span class="o">=</span><span class="mi">600000000</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">mapred</span><span class="p">.</span><span class="k">min</span><span class="p">.</span><span class="n">split</span><span class="p">.</span><span class="k">size</span><span class="p">.</span><span class="n">per</span><span class="p">.</span><span class="n">rack</span><span class="o">=</span><span class="mi">600000000</span><span class="p">;</span>
+</code></pre></div>    </div>
+    <p><a href="https://documentation.altiscale.com/heapsize-for-mappers-and-reducers">惯例</a>: <code class="highlighter-rouge">mapreduce.{map|reduce}.java.opts = mapreduce.{map|reduce}.memory.mb x 0.9</code></p>
+
+    <p><img src="https://documentation.altiscale.com/userfiles/1651/2522/ckfinder/images/MR_Mem_Alloc%20-%20java_opts%20vs%20mr.png?dc=201508172029-0" alt="内存分配图" /></p>
+  </li>
+  <li>
+    <p><a href="https://cwiki.apache.org/confluence/display/Hive/CompressedStorage">压缩结果数据</a></p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SET</span> <span class="n">hive</span><span class="p">.</span><span class="k">exec</span><span class="p">.</span><span class="n">compress</span><span class="p">.</span><span class="k">output</span><span class="o">=</span><span class="k">true</span><span class="p">;</span>
+<span class="c1">-- SET mapred.output.compression.codec=org.apache.hadoop.io.compress.SnappyCodec;</span>
+<span class="c1">-- SET mapred.output.compression.type=BLOCK;</span>
+<span class="c1">-- SET io.seqfile.compression.type=BLOCK;</span>
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>mapred.output.compression.type: I use block. This will make the compression slittable even for all compression formats (gzip, snappy, and bzip2) just make sure your using a splitable file format like sequence, RCFile, or Avro.</p>
+    </blockquote>
+
+    <p><a href="http://comphadoop.weebly.com/">Common input format</a>
+Compression format | Tool | Algorithm | File extention | Splittable
+–|–|–|–|–
+gzip | gzip | DEFLATE | .gz | No
+bzip2 | bizp2 | bzip2 | .bz2 | Yes
+LZO | lzop | LZO | .lzo | Yes if indexed
+Snappy | N/A | Snappy | .snappy | No</p>
+
+    <p>ref: <a href="http://www.cloudera.com/documentation/archive/cdh/4-x/4-3-0/CDH4-Installation-Guide/cdh4ig_topic_23_5.html">Using Snappy for Hive Compression</a></p>
+  </li>
+  <li>
+    <p>合并结果中的小文件</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">set</span> <span class="n">hive</span><span class="p">.</span><span class="n">merge</span><span class="p">.</span><span class="n">mapfiles</span><span class="o">=</span><span class="k">true</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">hive</span><span class="p">.</span><span class="n">merge</span><span class="p">.</span><span class="n">mapredfiles</span><span class="o">=</span><span class="k">true</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">hive</span><span class="p">.</span><span class="n">merge</span><span class="p">.</span><span class="k">size</span><span class="p">.</span><span class="n">per</span><span class="p">.</span><span class="n">task</span><span class="o">=</span><span class="mi">256000000</span><span class="p">;</span>
+<span class="k">set</span> <span class="n">hive</span><span class="p">.</span><span class="n">merge</span><span class="p">.</span><span class="n">smallfiles</span><span class="p">.</span><span class="n">avgsize</span><span class="o">=</span><span class="mi">256000000</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>自定义UDF</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">add</span> <span class="n">jar</span> <span class="n">hive_udf</span><span class="p">.</span><span class="n">jar</span><span class="p">;</span>
+<span class="k">create</span> <span class="k">temporary</span> <span class="k">function</span> <span class="n">getJsonArray</span> <span class="k">as</span> <span class="s1">'com.weibo.hive.udtf.json.UDFGenerateJsonArray'</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2017-01/hive-basic-usage" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2017-01/hive-basic-usage" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2017-01/hive-basic-usage" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2017-01/hive-basic-usage" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2017-01/hive-basic-usage" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2018 吴楚. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>
