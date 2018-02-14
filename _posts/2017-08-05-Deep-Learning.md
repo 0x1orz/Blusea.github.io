@@ -9,12 +9,6 @@ modify: 2018-01-22 10:02:28
 
 update: 2018-01-22
 
-
-最近在用tensorflow做深度学习方面的工作，总有「书到用时方恨少」之感。虽然研究生时上过两门相关课程，但均是浅尝辙止。这回和冬博士讨教，他推荐了[Deep Learning](http://www.deeplearningbook.org)这本书，于是打算认真研读下。
-
-思路安排如下：因为已经有数学和机器学习基础，所以跳过第一部份，如果遇到困难，再返查细节。重点阅读第二部份，笔记，如有习题，尽量做习题，并且用tensorflow示意。通览第三部份，笔记，有个大致印象即可。预计耗时3个月。
-
-
 ### 目录
 
 ##### [1 Introduction](http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/deep_learning/Introduction/note.ipynb)

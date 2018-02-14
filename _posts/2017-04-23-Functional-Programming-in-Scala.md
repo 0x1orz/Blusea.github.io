@@ -7,12 +7,6 @@ tags: []
 modify: 2017-06-23 09:55:59
 ---
 
-update: 2017-06-23
-
-早上四点就自然醒了，没了睡意，就整理下最近在看的函数式编程书籍[Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala), 2015。同事推荐说有点烧脑，做了开头两章，确实挺好玩的。
-
-官方在Github上有个仓库，放了习题、指导和答案，很方便，见[fpinscala/fpinscala](https://github.com/fpinscala/fpinscala)。遗憾的是我没有看到习题配套的单元测试用例来校验正确性，所以自己建了个mvn工程，作业都放在[facaiy/book_notes](https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala)。希望尽量都做一遍，耗时预计在两个月。
-
 
 ### 目录
 

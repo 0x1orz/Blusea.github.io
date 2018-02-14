@@ -7,9 +7,7 @@ tags: []
 modify: 2016-03-21 18:55:07
 ---
 
-先看了简化版[ An Introduction to Statistical Learning with Applications in R](http://www-bcf.usc.edu/~gareth/ISL/index.html)，内容通俗易懂。然后想再挑战下进阶版[The Elements of Statistical Learning (corrected 10th printing)](http://statweb.stanford.edu/~tibs/ElemStatLearn/)，发现数理部份相当难，比如矩阵求导和条件期望，我是非常生疏。
 
-不知道能否看完此书，又需要多长时间。目前想法是做笔记（基本要点），课后习题尽量解，能力有限，肯定错不会少，还请指正。书中部份公式有尝试证明，整理过于耗时，只好先行搁置。
 
 ### [目录](http://nbviewer.jupyter.org/github/facaiy/book_notes/tree/master/The_Elements_of_Statistical_Learning/)
 

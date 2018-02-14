@@ -168,10 +168,6 @@
       <p>
         <p>update: 2018-01-22</p>
 
-<p>最近在用tensorflow做深度学习方面的工作，总有「书到用时方恨少」之感。虽然研究生时上过两门相关课程，但均是浅尝辙止。这回和冬博士讨教，他推荐了<a href="http://www.deeplearningbook.org">Deep Learning</a>这本书，于是打算认真研读下。</p>
-
-<p>思路安排如下：因为已经有数学和机器学习基础，所以跳过第一部份，如果遇到困难，再返查细节。重点阅读第二部份，笔记，如有习题，尽量做习题，并且用tensorflow示意。通览第三部份，笔记，有个大致印象即可。预计耗时3个月。</p>
-
 <h3 id="目录">目录</h3>
 
 <h5 id="1-introduction"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/deep_learning/Introduction/note.ipynb">1 Introduction</a></h5>
@@ -327,83 +323,6 @@
   <li>Liblinear</li>
 </ul>
 
-<h3 id="2-结语">2. 结语</h3>
-
-<p>逻辑回归的理论既简单又复杂，简单是说二分类的代数式很容易入门看懂，复杂是说对它的拓展可以很深入，如用矩阵式来求解、多分类、复杂的数值优化方法等等。易于入门，难于精通。</p>
-
-<p>虽然线性分类器后面的数理知识坚实又深奥，然而工程实现相对简单，主要是损失函数和导数、及寻优算子二部份。大多数工程实现都大同小异，如sklearn是标签-1/+1的推导，spark在最后代数变换，将0/1标签转成-1/+1，tensorflow是标签0/1的推导。总体而言，代码并不太复杂。</p>
-
-<p>花费了两周时间来梳理基础知识，以后有时间再深入。</p>
-
-      </p>
-    </div>
-    
-
-    
-
-</section>
-
-<section class="post">
-  <header class="post-header">
-    <p class="post-meta">
-      <span class="post-date">
-        7 JUN 2017
-      </span>
-      
-      •
-      
-        <a class="post-cat" href="http://localhost:4000/categories/#misc">misc</a>
-        
-      
-      
-    </p>
-    <h4>
-      <a href="http://localhost:4000/articles/2017-06/intellij-scala-trim-trailing-space" class="post-title" title="How to remove trailing spaces(行尾空格) for Scala in IntelliJ IDEA 2017">How to remove trailing spaces(行尾空格) for Scala in IntelliJ IDEA 2017</a>
-      
-    </h4>
-
-    
-
-    </header>
-
-    
-    <div class="post-description">
-      <p>
-        <p>update: 2017-06-08</p>
-
-<p>最近IntelliJ升级到2017后，scala文件的行尾空格，不再自动消除，真是逼死洁癖程序员。</p>
-
-<p>开始我的解决方案是在git提交时做防御，如下：</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">-a</span> <span class="nt">-m</span> <span class="s2">"xxx"</span>
-git rebase <span class="nt">--whitespace</span><span class="o">=</span>fix HEAD~1
-</code></pre></div></div>
-
-<p>但每回都得敲俩命令，真是不胜其烦。</p>
-
-<p>已经打算弄个bash化名前，幸好我查了下IntelliJ配置，结果找到了做怪的选项。
-解决方案如下：</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+ Preferences
-  - Editor
-    - General
-      - Other
-        Strip trailing spaces on Save: [Modified Lines]
-        [ ] Always keep trailing spaces on caret line
-
-+ Preferences
-  - Editor
-    - Code Style
-      - Scala
-        - Tabs and Indents:
-          [ ] Keep indents on empty lines
-</code></pre></div></div>
-
-<p>注意，此功能只会在保存文件时触发。</p>
-
-<p>所以，每次提交前，保存全部文件（Save All: Command key + S），即会自动清除。</p>
-
-<p>总之，又可以愉快地搬砖了，以上。</p>
 
       </p>
     </div>
@@ -440,8 +359,6 @@ git rebase <span class="nt">--whitespace</span><span class="o">=</span>fix HEAD~
     <div class="post-description">
       <p>
         <p>update: 2017-06-08</p>
-
-<p>在工作生活中，会有同事朋友初入门机器学习，希望推荐下这方面的信息。为了一劳永逸，打算梳理下比较好的书籍，及Python生态圈常用的库，以供参考。</p>
 
 <h3 id="a-书籍">A. 书籍</h3>
 
@@ -648,10 +565,6 @@ conda <span class="nb">install </span>scikit-learn
       <p>
         <p>update: 2017-05-30</p>
 
-<p>最近开始尝试进行Spark贡献，目前精力主要在ML部份。在反复读代码的过程中，做了些笔记资料，打算分享出来。一则自己备忘，二来也方便他人快速上手。</p>
-
-<p>因为主要是自己看，代码的迭代也快，只会简要做些点注，并不会面面俱到。如果想要深而细，建议阅读<a href="https://www.gitbook.com/book/jaceklaskowski/mastering-apache-spark/details">Mastering Apache Spark 2</a>。</p>
-
 <ul>
   <li>04-30，<a href="https://www.evernote.com/l/ADDXNX_7MMhI6Kf8Kh6hnCi5Xj0UgkTouJ8">Spark ML: Param架构笔记</a>，比较简单轻量，主要用到了trait的特性。</li>
   <li>05-01，<a href="https://www.evernote.com/l/ADDTp7Nc6iRFmJRUDola9Jpa9v1J1BAsNeg">Spark ML: Tree架构笔记</a>，为了性能，又是单例，RandomForest写得比较复杂，大量参数飞来飞去。</li>
@@ -693,13 +606,7 @@ conda <span class="nb">install </span>scikit-learn
     
     <div class="post-description">
       <p>
-        <p>update: 2017-06-23</p>
-
-<p>早上四点就自然醒了，没了睡意，就整理下最近在看的函数式编程书籍<a href="https://www.manning.com/books/functional-programming-in-scala">Functional Programming in Scala</a>, 2015。同事推荐说有点烧脑，做了开头两章，确实挺好玩的。</p>
-
-<p>官方在Github上有个仓库，放了习题、指导和答案，很方便，见<a href="https://github.com/fpinscala/fpinscala">fpinscala/fpinscala</a>。遗憾的是我没有看到习题配套的单元测试用例来校验正确性，所以自己建了个mvn工程，作业都放在<a href="https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala">facaiy/book_notes</a>。希望尽量都做一遍，耗时预计在两个月。</p>
-
-<h3 id="目录">目录</h3>
+        <h3 id="目录">目录</h3>
 
 <h4 id="part-1-introduction-to-functional-programming">PART 1 INTRODUCTION TO FUNCTIONAL PROGRAMMING</h4>
 
@@ -788,9 +695,7 @@ conda <span class="nb">install </span>scikit-learn
     
     <div class="post-description">
       <p>
-        <p>前段时间看了此书，简要书摘如下，以便个人快速回顾。</p>
-
-<h3 id="4-classes-and-objects">4. Classes and Objects</h3>
+        <h3 id="4-classes-and-objects">4. Classes and Objects</h3>
 <p><code class="highlighter-rouge">extends App</code>: don’t need write <code class="highlighter-rouge">main</code> function.</p>
 
 <h4 id="52-literals">5.2 Literals</h4>
@@ -1734,8 +1639,6 @@ spark.kryo.classesToRegister      org.apache.spark.mllib.stat.MultivariateOnline
       <p>
         <p>update: 2017-01-16</p>
 
-<p>by: 金凌，发才</p>
-
 <h3 id="常用操作">常用操作</h3>
 <ol>
   <li>
@@ -1962,10 +1865,6 @@ Snappy | N/A | Snappy | .snappy | No</p>
       <p>
         <p>update: 2017-03-15</p>
 
-<ul>
-  <li>2017-03-11，新浪微博算法平台，大部门分享：<a href="/assets/ml_tree/GBDT_TreeBoost_XGBoost_facaiy.pdf">GBDT、TreeBoost 和 XGBoost：树模型的进化之路 - 颜发才</a></li>
-</ul>
-
 <h3 id="缘起">缘起</h3>
 <p>看了不少机器学习的书籍，却始终是略懂皮毛的程度。最近项目训练GBDT模型，更是深切地认识到「学以致用」的必要性。故打算由浅入深地重新学习树相关的方法，大致思路是：首先实现 demo 阐明原理，再阅读常用的工程实现，最后阅读论文打通数学推导。</p>
 
@@ -2038,9 +1937,6 @@ Snappy | N/A | Snappy | .snappy | No</p>
 
 <h3 id="结语">结语</h3>
 
-<p>耗时近三个月，比预计的时间长。树相关的概念比较简单，但确实有些实现细节较为繁琐。回顾前面的文章，还是有问题的，有些是笔误，有些是当时的理解片面。后续打算整理一份详细的文档，汇总上述文章并修正错点。</p>
-
-<p>总之，树的专题可以暂时告一段落了，收获挺多。</p>
 
       </p>
     </div>
@@ -2076,11 +1972,7 @@ Snappy | N/A | Snappy | .snappy | No</p>
     
     <div class="post-description">
       <p>
-        <p>先看了简化版<a href="http://www-bcf.usc.edu/~gareth/ISL/index.html"> An Introduction to Statistical Learning with Applications in R</a>，内容通俗易懂。然后想再挑战下进阶版<a href="http://statweb.stanford.edu/~tibs/ElemStatLearn/">The Elements of Statistical Learning (corrected 10th printing)</a>，发现数理部份相当难，比如矩阵求导和条件期望，我是非常生疏。</p>
-
-<p>不知道能否看完此书，又需要多长时间。目前想法是做笔记（基本要点），课后习题尽量解，能力有限，肯定错不会少，还请指正。书中部份公式有尝试证明，整理过于耗时，只好先行搁置。</p>
-
-<h3 id="目录"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/tree/master/The_Elements_of_Statistical_Learning/">目录</a></h3>
+        <h3 id="目录"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/tree/master/The_Elements_of_Statistical_Learning/">目录</a></h3>
 
 <h4 id="1-introduction-1"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/The_Elements_of_Statistical_Learning/Introduction/note.ipynb">1 Introduction 1</a></h4>
 
@@ -2276,11 +2168,7 @@ By Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein</
     
     <div class="post-description">
       <p>
-        <p>朋友推荐，于是最近在看 <a href="http://www.mmds.org/">Mining of Massive Datasets - Jure Leskovec, Anand Rajaraman, Jeff Ullman</a>，此书资源在官网可自由获取。</p>
-
-<p>第一次尝试将笔记整理成 iPython notebook 形式，效果很棒！开始打算是将练习题尽量全做完的，但发现挺费时，后面主要是笔记整理为主，感兴趣的习题会尝试去解。</p>
-
-<h3 id="目录"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/tree/master/Mining_of_Massive_Datasets/">目录</a></h3>
+        <h3 id="目录"><a href="http://nbviewer.ipython.org/github/facaiy/book_notes/tree/master/Mining_of_Massive_Datasets/">目录</a></h3>
 
 <h4 id="1-data-mining">1 Data Mining</h4>
 
@@ -2306,8 +2194,6 @@ By Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein</
 
 <h4 id="12--large-scale-machine-learning"><a href="http://nbviewer.jupyter.org/github/facaiy/book_notes/blob/master/Mining_of_Massive_Datasets/Large-Scale_Machine_Learning/note.ipynb">12  Large-Scale Machine Learning</a></h4>
 
-<p>后记:  <br />
-花费6个月时间，断断续续看完，哈希和近似的想法真是开阔了眼界。第一回看比较急促，此书值得反复看，多实践。</p>
 
       </p>
     </div>

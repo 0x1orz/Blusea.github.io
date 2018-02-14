@@ -5,17 +5,13 @@
     <description>A simple and awesome blog theme powered by jekyll.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 14 Feb 2018 21:45:36 +0000</pubDate>
-    <lastBuildDate>Wed, 14 Feb 2018 21:45:36 +0000</lastBuildDate>
+    <pubDate>Wed, 14 Feb 2018 21:54:16 +0000</pubDate>
+    <lastBuildDate>Wed, 14 Feb 2018 21:54:16 +0000</lastBuildDate>
     <generator>Jekyll v3.7.2</generator>
     
       <item>
         <title>笔记：Deep Learning</title>
         <description>&lt;p&gt;update: 2018-01-22&lt;/p&gt;
-
-&lt;p&gt;最近在用tensorflow做深度学习方面的工作，总有「书到用时方恨少」之感。虽然研究生时上过两门相关课程，但均是浅尝辙止。这回和冬博士讨教，他推荐了&lt;a href=&quot;http://www.deeplearningbook.org&quot;&gt;Deep Learning&lt;/a&gt;这本书，于是打算认真研读下。&lt;/p&gt;
-
-&lt;p&gt;思路安排如下：因为已经有数学和机器学习基础，所以跳过第一部份，如果遇到困难，再返查细节。重点阅读第二部份，笔记，如有习题，尽量做习题，并且用tensorflow示意。通览第三部份，笔记，有个大致印象即可。预计耗时3个月。&lt;/p&gt;
 
 &lt;h3 id=&quot;目录&quot;&gt;目录&lt;/h3&gt;
 
@@ -149,13 +145,6 @@
   &lt;li&gt;Liblinear&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;2-结语&quot;&gt;2. 结语&lt;/h3&gt;
-
-&lt;p&gt;逻辑回归的理论既简单又复杂，简单是说二分类的代数式很容易入门看懂，复杂是说对它的拓展可以很深入，如用矩阵式来求解、多分类、复杂的数值优化方法等等。易于入门，难于精通。&lt;/p&gt;
-
-&lt;p&gt;虽然线性分类器后面的数理知识坚实又深奥，然而工程实现相对简单，主要是损失函数和导数、及寻优算子二部份。大多数工程实现都大同小异，如sklearn是标签-1/+1的推导，spark在最后代数变换，将0/1标签转成-1/+1，tensorflow是标签0/1的推导。总体而言，代码并不太复杂。&lt;/p&gt;
-
-&lt;p&gt;花费了两周时间来梳理基础知识，以后有时间再深入。&lt;/p&gt;
 </description>
         <pubDate>Mon, 26 Jun 2017 00:00:00 +0000</pubDate>
         <link>http://localhost:4000/articles/2017-06/machine_learn_logistic_regression</link>
@@ -167,57 +156,8 @@
       </item>
     
       <item>
-        <title>How to remove trailing spaces(行尾空格) for Scala in IntelliJ IDEA 2017</title>
-        <description>&lt;p&gt;update: 2017-06-08&lt;/p&gt;
-
-&lt;p&gt;最近IntelliJ升级到2017后，scala文件的行尾空格，不再自动消除，真是逼死洁癖程序员。&lt;/p&gt;
-
-&lt;p&gt;开始我的解决方案是在git提交时做防御，如下：&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;xxx&quot;&lt;/span&gt;
-git rebase &lt;span class=&quot;nt&quot;&gt;--whitespace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;fix HEAD~1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;但每回都得敲俩命令，真是不胜其烦。&lt;/p&gt;
-
-&lt;p&gt;已经打算弄个bash化名前，幸好我查了下IntelliJ配置，结果找到了做怪的选项。
-解决方案如下：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;+ Preferences
-  - Editor
-    - General
-      - Other
-        Strip trailing spaces on Save: [Modified Lines]
-        [ ] Always keep trailing spaces on caret line
-
-+ Preferences
-  - Editor
-    - Code Style
-      - Scala
-        - Tabs and Indents:
-          [ ] Keep indents on empty lines
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;注意，此功能只会在保存文件时触发。&lt;/p&gt;
-
-&lt;p&gt;所以，每次提交前，保存全部文件（Save All: Command key + S），即会自动清除。&lt;/p&gt;
-
-&lt;p&gt;总之，又可以愉快地搬砖了，以上。&lt;/p&gt;
-</description>
-        <pubDate>Wed, 07 Jun 2017 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/articles/2017-06/intellij-scala-trim-trailing-space</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2017-06/intellij-scala-trim-trailing-space</guid>
-        
-        
-        <category>misc</category>
-        
-      </item>
-    
-      <item>
         <title>整理：机器学习入门书籍和Python库</title>
         <description>&lt;p&gt;update: 2017-06-08&lt;/p&gt;
-
-&lt;p&gt;在工作生活中，会有同事朋友初入门机器学习，希望推荐下这方面的信息。为了一劳永逸，打算梳理下比较好的书籍，及Python生态圈常用的库，以供参考。&lt;/p&gt;
 
 &lt;h3 id=&quot;a-书籍&quot;&gt;A. 书籍&lt;/h3&gt;
 
@@ -378,10 +318,6 @@ conda &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;scikit-learn
         <title>Spark ML工程笔记汇总</title>
         <description>&lt;p&gt;update: 2017-05-30&lt;/p&gt;
 
-&lt;p&gt;最近开始尝试进行Spark贡献，目前精力主要在ML部份。在反复读代码的过程中，做了些笔记资料，打算分享出来。一则自己备忘，二来也方便他人快速上手。&lt;/p&gt;
-
-&lt;p&gt;因为主要是自己看，代码的迭代也快，只会简要做些点注，并不会面面俱到。如果想要深而细，建议阅读&lt;a href=&quot;https://www.gitbook.com/book/jaceklaskowski/mastering-apache-spark/details&quot;&gt;Mastering Apache Spark 2&lt;/a&gt;。&lt;/p&gt;
-
 &lt;ul&gt;
   &lt;li&gt;04-30，&lt;a href=&quot;https://www.evernote.com/l/ADDXNX_7MMhI6Kf8Kh6hnCi5Xj0UgkTouJ8&quot;&gt;Spark ML: Param架构笔记&lt;/a&gt;，比较简单轻量，主要用到了trait的特性。&lt;/li&gt;
   &lt;li&gt;05-01，&lt;a href=&quot;https://www.evernote.com/l/ADDTp7Nc6iRFmJRUDola9Jpa9v1J1BAsNeg&quot;&gt;Spark ML: Tree架构笔记&lt;/a&gt;，为了性能，又是单例，RandomForest写得比较复杂，大量参数飞来飞去。&lt;/li&gt;
@@ -400,13 +336,7 @@ conda &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;scikit-learn
     
       <item>
         <title>笔记：Functional Programming in Scala</title>
-        <description>&lt;p&gt;update: 2017-06-23&lt;/p&gt;
-
-&lt;p&gt;早上四点就自然醒了，没了睡意，就整理下最近在看的函数式编程书籍&lt;a href=&quot;https://www.manning.com/books/functional-programming-in-scala&quot;&gt;Functional Programming in Scala&lt;/a&gt;, 2015。同事推荐说有点烧脑，做了开头两章，确实挺好玩的。&lt;/p&gt;
-
-&lt;p&gt;官方在Github上有个仓库，放了习题、指导和答案，很方便，见&lt;a href=&quot;https://github.com/fpinscala/fpinscala&quot;&gt;fpinscala/fpinscala&lt;/a&gt;。遗憾的是我没有看到习题配套的单元测试用例来校验正确性，所以自己建了个mvn工程，作业都放在&lt;a href=&quot;https://github.com/facaiy/book_notes/tree/master/Manning_Functional_Programming_in_Scala&quot;&gt;facaiy/book_notes&lt;/a&gt;。希望尽量都做一遍，耗时预计在两个月。&lt;/p&gt;
-
-&lt;h3 id=&quot;目录&quot;&gt;目录&lt;/h3&gt;
+        <description>&lt;h3 id=&quot;目录&quot;&gt;目录&lt;/h3&gt;
 
 &lt;h4 id=&quot;part-1-introduction-to-functional-programming&quot;&gt;PART 1 INTRODUCTION TO FUNCTIONAL PROGRAMMING&lt;/h4&gt;
 
@@ -472,9 +402,7 @@ conda &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;scikit-learn
     
       <item>
         <title>笔记: Programming in Scala, third edition</title>
-        <description>&lt;p&gt;前段时间看了此书，简要书摘如下，以便个人快速回顾。&lt;/p&gt;
-
-&lt;h3 id=&quot;4-classes-and-objects&quot;&gt;4. Classes and Objects&lt;/h3&gt;
+        <description>&lt;h3 id=&quot;4-classes-and-objects&quot;&gt;4. Classes and Objects&lt;/h3&gt;
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;extends App&lt;/code&gt;: don’t need write &lt;code class=&quot;highlighter-rouge&quot;&gt;main&lt;/code&gt; function.&lt;/p&gt;
 
 &lt;h4 id=&quot;52-literals&quot;&gt;5.2 Literals&lt;/h4&gt;
@@ -1372,8 +1300,6 @@ spark.kryo.classesToRegister      org.apache.spark.mllib.stat.MultivariateOnline
         <title>Hive示例整理</title>
         <description>&lt;p&gt;update: 2017-01-16&lt;/p&gt;
 
-&lt;p&gt;by: 金凌，发才&lt;/p&gt;
-
 &lt;h3 id=&quot;常用操作&quot;&gt;常用操作&lt;/h3&gt;
 &lt;ol&gt;
   &lt;li&gt;
@@ -1503,6 +1429,50 @@ Snappy | N/A | Snappy | .snappy | No&lt;/p&gt;
         
         
         <category>misc</category>
+        
+      </item>
+    
+      <item>
+        <title>机器学习：LDA算法</title>
+        <description>&lt;p&gt;update: 2016-11-29&lt;/p&gt;
+
+&lt;p&gt;LDA是我们部们用得比较广泛的主题模型，最常见的用途是找到相似文本用于推荐。这个算法的使用和工程实现都比较简单，但背后的数学原理繁复，所以想下点功夫弄清楚。思路是以做带学，在梳理代码实现的同时，再查阅文献弄清后面的数学公式。&lt;/p&gt;
+
+&lt;h3 id=&quot;0-原理简介&quot;&gt;0. 原理简介&lt;/h3&gt;
+
+&lt;p&gt;参考：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/v_july_v/article/details/41209515?utm_source=tuicool&quot;&gt;通俗理解LDA主题模型&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;LDA数学八卦，靳志辉&lt;/li&gt;
+  &lt;li&gt;Parameter estimation for text analysis, Gregor Heinrich.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1-工程实现&quot;&gt;1. 工程实现&lt;/h3&gt;
+
+&lt;h4 id=&quot;10-spark&quot;&gt;1.0 spark&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;框架UML&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;模块细节&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;11-sklearn&quot;&gt;1.1 sklearn&lt;/h4&gt;
+
+&lt;h4 id=&quot;12-jbibblda&quot;&gt;1.2 jbibblda&lt;/h4&gt;
+
+&lt;h3 id=&quot;结语&quot;&gt;结语&lt;/h3&gt;
+</description>
+        <pubDate>Tue, 29 Nov 2016 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/articles/2016-11/machine_learn_lda</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2016-11/machine_learn_lda</guid>
+        
+        
+        <category>tech</category>
         
       </item>
     
